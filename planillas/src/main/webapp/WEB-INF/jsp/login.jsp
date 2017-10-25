@@ -62,14 +62,14 @@
         <div class="row">
           <div class="input-field col s12 center">
             <img src="<c:url value='resources/plugin/images/login-logo.png'/>" alt="" class="circle responsive-img valign profile-image-login"/>
-            <p class="center login-form-text">Material Design Admin Template</p>
+            <p class="center login-form-text">Sistema de Planillas</p>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
             <input id="username" type="text">
-            <label for="username" class="center-align">Username</label>
+            <label for="username" class="center-align">Usuario</label>
           </div>
         </div>
         <div class="row margin">
@@ -87,7 +87,7 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <a href="index.html" class="btn waves-effect waves-light col s12">Login</a>
+            <a href="index.html" class="btn waves-effect waves-light col s12">Entrar</a>
           </div>
         </div>
         <div class="row">
