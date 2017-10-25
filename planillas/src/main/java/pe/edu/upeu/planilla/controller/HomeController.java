@@ -12,7 +12,7 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String hello() {
-		return "index";
+		return "login";
 	}
 	
 }
