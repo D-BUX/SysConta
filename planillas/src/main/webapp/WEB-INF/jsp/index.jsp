@@ -8,38 +8,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
 <!-- CSS -->
 
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
-    <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
-    
-
-    <!-- Favicons-->
-    <link rel="icon" href="<c:url value='resources/plugin/images/favicon/favicon-32x32.png'/>" sizes="32x32"/>
-    <!-- Favicons-->
-    <link rel="apple-touch-icon-precomposed" href="<c:url value='resources/plugin/images/favicon/apple-touch-icon-152x152.png'/>">
-    <!-- For iPhone -->
-    <meta name="msapplication-TileColor" content="#00bcd4">
-    <meta name="msapplication-TileImage" content="<c:url value='resources/plugin/images/favicon/mstile-144x144.png'/>">
-    <!-- For Windows Phone -->
-
-
-    <!-- CORE CSS-->
-    
-    <link href="<c:url value='resources/plugin/css/materialize.min.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="<c:url value='resources/plugin/css/style.min.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
-    <!-- Custome CSS-->    
-    <link href="<c:url value='resources/plugin/css/custom/custom.min.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
-
-
-    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
-    <link href="<c:url value='resources/plugin/js/plugins/prism/prism.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="<c:url value='resources/plugin/js/plugins/perfect-scrollbar/perfect-scrollbar.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="<c:url value='resources/plugin/js/plugins/chartist-js/chartist.min.css" type="text/css'/>" rel="stylesheet" media="screen,projection">
+      <%@include file="../../jspf/header.jspf"%>
 
 
 </head>
@@ -197,38 +169,14 @@
         </div>
     </div>
 
-    <!-- START FOOTER -->
-    <footer class="page-footer">
-    <div class="footer-copyright">
-      <div class="container">
-        <span>Copyright © 2015 <a class="grey-text text-lighten-4" href="http://themeforest.net/user/geekslabs/portfolio?ref=geekslabs" target="_blank">GeeksLabs</a> All rights reserved.</span>
-        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://geekslabs.com/">GeeksLabs</a></span>
-        </div>
-    </div>
-  </footer>
-    <!-- END FOOTER -->
-
+   
+ 	<%@include file="../../jspf/footer.jspf"%>
 
 
     <!-- ================================================
     Scripts
     ================================================ -->
-    
-    <!-- jQuery Library -->
-    <script type="text/javascript" src="<c:url value='resources/plugin/js/plugins/jquery-1.11.2.min.js'/>"></script>    
-    <!--materialize js-->
-    <script type="text/javascript" src="<c:url value='resources/plugin/js/materialize.min.js'/>"></script>
-    <!--prism-->
-    <script type="text/javascript" src="<c:url value='resources/plugin/js/plugins/prism/prism.js'/>"></script>
-    <!--scrollbar-->
-    <script type="text/javascript" src="<c:url value='resources/plugin/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js'/>"></script>
-    <!-- chartist -->
-    <script type="text/javascript" src="<c:url value='resources/plugin/js/plugins/chartist-js/chartist.min.js'/>"></script>   
-    
-    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
-    <script type="text/javascript" src="<c:url value='resources/plugin/js/plugins.min.js'/>"></script>
-    <!--custom-script.js - Add your own theme custom JS-->
-    <script type="text/javascript" src="<c:url value='resources/plugin/js/custom-script.js'/>"></script>
+    <%@include file="../../jspf/general.jspf"%>
     
 </body>
 
