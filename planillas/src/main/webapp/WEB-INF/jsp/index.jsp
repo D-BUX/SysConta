@@ -41,6 +41,7 @@
     <link href="<c:url value='resources/plugin/js/plugins/perfect-scrollbar/perfect-scrollbar.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<c:url value='resources/plugin/js/plugins/chartist-js/chartist.min.css" type="text/css'/>" rel="stylesheet" media="screen,projection">
 
+
 </head>
 <body>
 
@@ -231,5 +232,4 @@
     
 </body>
 
-</body>
 </html>
