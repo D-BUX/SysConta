@@ -61,7 +61,7 @@
       <form class="login-form">
         <div class="row">
           <div class="input-field col s12 center">
-            <img src="<c:url value='resources/plugin/images/login-logo.png'/>" alt="" class="circle responsive-img valign profile-image-login"/>
+            <img src="<c:url value='resources/imagenes/icono.png'/>" alt="" class="circle responsive-img valign profile-image-login"/>
             <p class="center login-form-text">Sistema de Planillas</p>
           </div>
         </div>

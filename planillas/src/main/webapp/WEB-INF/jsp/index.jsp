@@ -88,10 +88,10 @@
 		<div class="wrapper">
 
 			<!-- START LEFT SIDEBAR NAV-->
-			
+
 			<%@include file="../../jspf/nav.jspf"%>
-			
-			
+
+
 			<!-- END LEFT SIDEBAR NAV-->
 
 			<!-- //////////////////////////////////////////////////////////////////////////// -->
@@ -119,6 +119,7 @@
 				</div>
 			</div>
 
+			<!-- //////////////////////////////////////////////////////////////////////////// -->
 
 			<!--start container-->
 			<div class="container" id="Contenido">
@@ -126,8 +127,10 @@
 				<h1>Hola mundo Papu</h1>
 
 			</div>
-			<!--end container--> 
-			</section>
+
+			<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+			<!--end container--> </section>
 		</div>
 	</div>
 
