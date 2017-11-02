@@ -1,5 +1,11 @@
 package pe.edu.upeu.planilla.config;
 
-public class MessageSecurityWebApplicationInitializer {
 
+import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
+
+
+public class MessageSecurityWebApplicationInitializer  extends AbstractSecurityWebApplicationInitializer {
+		public MessageSecurityWebApplicationInitializer() {
+			super(SecurityConfig.class);
+		}
 }
