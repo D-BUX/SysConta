@@ -20,7 +20,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	
 	@Override
 	public UserDetails loadUserByUsername(String User) throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
+		//Aqui va los datos del usuario 
 		return null;
 	}
 
