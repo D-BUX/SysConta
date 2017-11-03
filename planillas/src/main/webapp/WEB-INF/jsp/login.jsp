@@ -98,7 +98,7 @@
               <p class="margin right-align medium-small"><a href="page-forgot-password.html">Forgot password ?</a></p>
           </div>          
         </div>
-
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
       </form>
     </div>
   </div>
