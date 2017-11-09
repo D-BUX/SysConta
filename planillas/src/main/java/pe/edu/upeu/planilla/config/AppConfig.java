@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -20,7 +21,6 @@ import org.springframework.web.servlet.view.JstlView;
 public class AppConfig extends WebMvcConfigurerAdapter {
 
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		// TODO Auto-generated method stub
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 		registry.addResourceHandler("/jspf/**").addResourceLocations("/jspf/");
 		super.addResourceHandlers(registry);
@@ -30,10 +30,10 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	 @Bean
 		public static DataSource getDataSource() {
 			DriverManagerDataSource dataSource = new DriverManagerDataSource();
-			dataSource.setDriverClassName("oracle.jdbc.OracleDriver");//driver-conexion//
-			dataSource.setUrl("jdbc:oracle:thin:@ "+ globalPropertices.HOSTNAME +":"+ globalPropertices.PORT+":"+globalPropertices.SID+"");//url-conexion//
-			dataSource.setUsername(globalPropertices.USER);//user-conexion//
-			dataSource.setPassword(globalPropertices.USER_PSW);//pass-conexion//
+			dataSource.setDriverClassName("com.mysql.jdbc.Driver");//driver-conexion//
+			dataSource.setUrl("jdbc:mysql://localhost:3306/dbacademico");//url-conexion//
+			dataSource.setUsername("root");//user-conexion//
+			dataSource.setPassword("");//pass-conexion//
 			return dataSource;
 		}
 	
@@ -47,6 +47,15 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		return viewResolver;
 	}
 
+	@Bean
+    public JdbcTemplate jdbcTemplate() {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate.setDataSource(getDataSource());
+        return jdbcTemplate;
+    }
+
+	
+	
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
