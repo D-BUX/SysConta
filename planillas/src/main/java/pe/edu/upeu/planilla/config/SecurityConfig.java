@@ -12,8 +12,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-		//aqui va conexion pero como estamos haciendo OO estamos heredado los usuarios
-	
 		auth.authenticationProvider(authenticationProvider());
 	}
 	

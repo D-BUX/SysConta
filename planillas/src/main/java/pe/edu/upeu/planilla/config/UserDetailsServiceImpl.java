@@ -1,6 +1,5 @@
 package pe.edu.upeu.planilla.config;
 
-import javax.sql.DataSource;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,9 +13,7 @@ import pe.edu.upeu.planilla.dao.PersonaDAO;
 @Transactional(readOnly=true)
 public class UserDetailsServiceImpl implements UserDetailsService{
 
-	DataSource d = AppConfig.getDataSource();
-	
-	private PersonaDAO pao = new PersonaDAO(d);
+	private PersonaDAO pao = new PersonaDAO();
 	
 	@Override
 	public UserDetails loadUserByUsername(String User) throws UsernameNotFoundException {
