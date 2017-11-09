@@ -1,6 +1,13 @@
 package pe.edu.upeu.planilla.model;
 
-public class PersonaDTO {
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.Map;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+public class PersonaDTO implements UserDetails , Serializable{
 
 	private int idpersona;
 	private String nombre;
@@ -13,14 +20,46 @@ public class PersonaDTO {
 	private String estadocivil;
 	private String sexo;
 	private String fecha_nac;
+	
 	private int idusuario;
+	private String usuario;
+	private String contraseña;
+	
+	private int idrol;
+	private String nombrol;
+	
+	boolean accountNonExpired;
+	boolean AccountNonLocked;
+	boolean CredentialsNonExpired;
+	boolean Enabled;
 	
 	
 	public PersonaDTO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
+	public PersonaDTO(Map<String,Object> userT, boolean accountNonExpired, boolean AccountNonLocked, boolean CredentialsNonExpired, boolean Enabled ) {
+		this.nombre = ((String) userT.get("nombre")).trim();
+		this.apellido = ((String) userT.get("nombre")).trim();
+		this.tipo_doc = ((String) userT.get("nombre")).trim();
+		this.numero_doc = ((String) userT.get("nombre")).trim();
+		this.direccion = ((String) userT.get("nombre")).trim();
+		this.telefono = ((String) userT.get("nombre")).trim();
+		this.correo = ((String) userT.get("nombre")).trim();
+		this.estadocivil = ((String) userT.get("nombre")).trim();
+		this.sexo = ((String) userT.get("nombre")).trim();
+		this.fecha_nac = ((String) userT.get("nombre")).trim();
+		this.usuario = ((String) userT.get("nombre")).trim();
+		this.contraseña = ((String) userT.get("nombre")).trim();
+		this.nombrol = ((String) userT.get("nombre")).trim();
+		this.accountNonExpired = accountNonExpired;
+		this.AccountNonLocked = AccountNonLocked;
+		this.CredentialsNonExpired = CredentialsNonExpired;
+		this.Enabled = Enabled;
+		
+	}
+	
+	
 	public PersonaDTO(String nombre, String apellido, String tipo_doc, String numero_doc, String direccion,
 			String telefono, String correo, String estadocivil, String sexo, String fecha_nac, int idusuario) {
 		super();
@@ -158,8 +197,48 @@ public class PersonaDTO {
 	public void setIdusuario(int idusuario) {
 		this.idusuario = idusuario;
 	}
-	
-		
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 	
 	

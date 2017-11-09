@@ -4,15 +4,24 @@ package pe.edu.upeu.planilla.dao;
 import java.util.ArrayList;
 import java.util.Map;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import pe.edu.upeu.planilla.config.AppConfig;
+
 @Repository
 public class PersonaDAO {
 
-	@Autowired
-	JdbcTemplate jt;
+	DataSource d = AppConfig.getDataSource();
+
+    private JdbcTemplate jt;
+
+    public PersonaDAO(DataSource dataSource) {
+        jt = new JdbcTemplate(dataSource);
+    }
 	
 	private String sql;
 	
