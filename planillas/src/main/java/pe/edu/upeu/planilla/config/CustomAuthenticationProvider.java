@@ -26,7 +26,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	public Authentication authenticate(Authentication auth) throws AuthenticationException {
 		// Configuracion de autentificacion
 
-		/*
+		
 		System.out.println("Ingresando a CustomAuthenticationProvider");
 		String username = auth.getName();
 		System.out.println(auth.getName());
@@ -56,8 +56,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 				System.out.println(upat.getName());
 				return upat;
 			}
-		}*/
-		return null;
+		}
 	}
 
 	@Override

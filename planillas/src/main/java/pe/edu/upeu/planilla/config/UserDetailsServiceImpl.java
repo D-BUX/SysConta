@@ -5,7 +5,7 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,6 @@ import pe.edu.upeu.planilla.model.PersonaDTO;
 @Transactional(readOnly=true)
 public class UserDetailsServiceImpl implements UserDetailsService{
 
-	
 	DataSource d = AppConfig.getDataSource();
 	
 	private PersonaDAO pao = new PersonaDAO(d);

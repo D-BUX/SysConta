@@ -1,12 +1,14 @@
 package pe.edu.upeu.planilla.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+//import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
+@Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
@@ -19,18 +21,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
 		
-		http.csrf().disable()
-		.authorizeRequests()
+		http.authorizeRequests()
 		.antMatchers("/resources/**").permitAll().anyRequest().authenticated()
 		.and()
 			.formLogin()
 				.loginPage("/login")
-				.permitAll()
+				.permitAll();/*
 				.loginProcessingUrl("/j_spring_security_check")
 				.usernameParameter("user")
 				.passwordParameter("password")
-		.and()
-			.httpBasic()
 		.and()
 			.logout()
 			.logoutSuccessUrl("/login")
@@ -39,11 +38,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.rememberMe()
 			.rememberMeParameter("remember-me-param")
 			.rememberMeCookieName("my-remember-me")
-			.tokenValiditySeconds(86400);
+			.tokenValiditySeconds(86400);*/
 	}
 
-	
-	
 	
 	public CustomAuthenticationProvider authenticationProvider() {
 		CustomAuthenticationProvider authProvider = new CustomAuthenticationProvider();
