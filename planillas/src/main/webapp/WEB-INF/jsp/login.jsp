@@ -90,9 +90,8 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <botton class="btn waves-effect waves-light col s12">Entrar</botton>
-          <input type="hidden" name="${_csrf.parameterName}"
-							value="${_csrf.token}" />
+            <input type="submit" class="btn waves-effect waves-light col s12">
+          <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
           </div>
         </div>
         <div class="row">

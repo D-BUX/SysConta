@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.and()
 			.formLogin()
 				.loginPage("/login")
-				.permitAll();/*
+				.permitAll()
 				.loginProcessingUrl("/j_spring_security_check")
 				.usernameParameter("user")
 				.passwordParameter("password")
@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.rememberMe()
 			.rememberMeParameter("remember-me-param")
 			.rememberMeCookieName("my-remember-me")
-			.tokenValiditySeconds(86400);*/
+			.tokenValiditySeconds(86400);
 	}
 
 	
