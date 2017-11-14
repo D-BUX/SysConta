@@ -40,18 +40,19 @@ public class PersonaDTO implements UserDetails , Serializable{
 
 	public PersonaDTO(Map<String,Object> userT, boolean accountNonExpired, boolean AccountNonLocked, boolean CredentialsNonExpired, boolean Enabled ) {
 		this.nombre = ((String) userT.get("nombre")).trim();
-		this.apellido = ((String) userT.get("nombre")).trim();
-		this.tipo_doc = ((String) userT.get("nombre")).trim();
-		this.numero_doc = ((String) userT.get("nombre")).trim();
-		this.direccion = ((String) userT.get("nombre")).trim();
-		this.telefono = ((String) userT.get("nombre")).trim();
-		this.correo = ((String) userT.get("nombre")).trim();
-		this.estadocivil = ((String) userT.get("nombre")).trim();
-		this.sexo = ((String) userT.get("nombre")).trim();
-		this.fecha_nac = ((String) userT.get("nombre")).trim();
-		this.usuario = ((String) userT.get("nombre")).trim();
-		this.contraseña = ((String) userT.get("nombre")).trim();
-		this.nombrol = ((String) userT.get("nombre")).trim();
+		this.apellido = ((String) userT.get("apellido")).trim();
+		this.tipo_doc = ((String) userT.get("tipo_doc")).trim();
+		this.numero_doc = ((String) userT.get("numero_doc")).trim();
+		this.direccion = ((String) userT.get("direccion")).trim();
+		this.telefono = ((String) userT.get("telefono")).trim();
+		this.correo = ((String) userT.get("correo")).trim();
+		this.estadocivil = ((String) userT.get("estadocivil")).trim();
+		this.sexo = ((String) userT.get("sexo")).trim();
+		this.fecha_nac = ((String) userT.get("fecha_nac")).trim();
+		this.usuario = ((String) userT.get("usuario")).trim();
+		this.contraseña = ((String) userT.get("contraseña")).trim();
+		this.idrol = (int) userT.get("idRol");
+		this.nombrol = ((String) userT.get("nomrol")).trim();
 		this.accountNonExpired = accountNonExpired;
 		this.AccountNonLocked = AccountNonLocked;
 		this.CredentialsNonExpired = CredentialsNonExpired;
@@ -207,37 +208,37 @@ public class PersonaDTO implements UserDetails , Serializable{
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return null;
+		return contraseña;
 	}
 
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return null;
+		return usuario;
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return accountNonExpired;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
 		// TODO Auto-generated method stub
-		return false;
+		return AccountNonLocked;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return CredentialsNonExpired;
 	}
 
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return false;
+		return Enabled;
 	}
 	
 	

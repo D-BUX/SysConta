@@ -18,8 +18,6 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "pe.edu.upeu.planilla.*")
-
-@Import({SecurityConfig.class})
 public class AppConfig extends WebMvcConfigurerAdapter {
 
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
