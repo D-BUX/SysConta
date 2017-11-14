@@ -38,7 +38,7 @@ public class PersonaDTO implements UserDetails , Serializable{
 		super();
 	}
 
-	public PersonaDTO(Map<String,Object> userT, boolean accountNonExpired, boolean AccountNonLocked, boolean CredentialsNonExpired, boolean Enabled ) {
+	public PersonaDTO(Map<String,Object> userT) {
 		this.nombre = ((String) userT.get("nombre")).trim();
 		this.apellido = ((String) userT.get("apellido")).trim();
 		this.tipo_doc = ((String) userT.get("tipo_doc")).trim();
@@ -53,10 +53,6 @@ public class PersonaDTO implements UserDetails , Serializable{
 		this.contraseña = ((String) userT.get("contraseña")).trim();
 		this.idrol = (int) userT.get("idRol");
 		this.nombrol = ((String) userT.get("nomrol")).trim();
-		this.accountNonExpired = accountNonExpired;
-		this.AccountNonLocked = AccountNonLocked;
-		this.CredentialsNonExpired = CredentialsNonExpired;
-		this.Enabled = Enabled;
 		
 	}
 	

@@ -1,6 +1,8 @@
 package pe.edu.upeu.planilla.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,8 +10,13 @@ import javax.servlet.http.HttpSession;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import pe.edu.upeu.planilla.config.AppConfig;
+import pe.edu.upeu.planilla.dao.PersonaDAO;
+import pe.edu.upeu.planilla.model.PersonaDTO;
 
 
 
@@ -18,11 +25,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
 
+	private PersonaDAO pao = new PersonaDAO(AppConfig.getDataSource());
+	
+	private PersonaDTO p = new PersonaDTO();
 
 	@GetMapping("/")
 	public String hello() {
 		return "login";
 	}
+	
+
+    
+    @RequestMapping("/x")
+    public String Principal (Model mo, HttpServletRequest resquest , HttpServletResponse response){
+        String url ="index";
+        String user = resquest.getParameter("user");
+        String Pass = resquest.getParameter("pass");
+        HttpSession sesion = resquest.getSession();
+        Map<String, Object> c= pao.getByUserName(user, Pass);
+        
+        try {
+            if(c.size() == 0){
+                resquest.getSession().setAttribute("Cliente", c);
+                url = "index";
+            }else{
+                url="login";
+            }
+        } catch (Exception e) {
+        }
+        return url;
+    }
 	
 	
 	/*

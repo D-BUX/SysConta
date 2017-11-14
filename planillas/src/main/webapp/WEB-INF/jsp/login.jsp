@@ -84,7 +84,7 @@ var gth_context_path = "<%=request.getContextPath()%>";
 
 	<div id="login-page" class="row">
 		<div class="col s12 z-depth-4 card-panel">
-			<form class="login-form" action="login" method="POST">
+			<form class="login-form" action="x" method="POST">
 			
 				<div class="row">
 					<div class="input-field col s12 center">

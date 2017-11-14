@@ -37,10 +37,10 @@ public class PersonaDAO {
         		"where p.idusuario = u.idusuario and u.idrol = r.idrol and u.usuario = ? and u.contraseña = ?";
         return (ArrayList<Map<String, Object>>) jt.queryForList(sql, usuario, pass);
     }
-	public Map<String, Object> getByUserName(String usuario) {
+	public Map<String, Object> getByUserName(String usuario , String clave) {
         sql = "Select *\r\n" + 
         		"from planillasdb.persona p , planillasdb.usuario u , planillasdb.rol r \r\n" + 
-        		"where p.idusuario = u.idusuario and u.idrol = r.idrol and u.usuario = ?";
+        		"where p.idusuario = u.idusuario and u.idrol = r.idrol and u.usuario = ? and u.contraseña = ?";
         return jt.queryForMap(sql, usuario);
     }
 	
