@@ -52,13 +52,7 @@ public class PersonaDAO {
 	            }
 	        });
 	        
-	    }
-	
-	
-	public ArrayList<Map<String, Object>> listar() {
-		sql = "SELECT * FROM Persona";
-        return (ArrayList<Map<String, Object>>) jt.queryForList(sql);
-	}
+	 }
 	
 	
 
@@ -68,5 +62,7 @@ public class PersonaDAO {
         		"where p.idusuario = u.idusuario and u.idrol = r.idrol and u.usuario = ? and u.contraseña = ?";
         return jt.queryForMap(sql, usuario);
     }
+	
+	
 	
 }
