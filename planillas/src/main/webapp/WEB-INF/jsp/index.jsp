@@ -1,3 +1,4 @@
+<%@page import="pe.edu.upeu.planilla.model.UsuarioDTO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -8,8 +9,14 @@
 <title>Insert title here</title>
 <!-- CSS -->
 <%@include file="../../jspf/header.jspf"%>
+
+<%
+	HttpSession sesion = request.getSession();
+    UsuarioDTO cli = (UsuarioDTO) session.getAttribute("u");
+	if (cli != null) {
+%>
+
 </head>
-<body>
 <body>
 	<!-- Start Page Loading -->
 	<div id="loader-wrapper">
@@ -141,4 +148,8 @@
     ================================================ -->
 	<%@include file="../../jspf/general.jspf"%>
 </body>
+<%} else {
+        out.print("<script> window.parent.location.href = '/planillas/';</script>");
+    }
+%>
 </html>

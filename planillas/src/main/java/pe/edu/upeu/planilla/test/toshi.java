@@ -33,8 +33,7 @@ public class toshi {
 
 		PersonaDAO a = new PersonaDAO(d);
 		
-		ArrayList<Map<String, Object>> sas = a.validar("Brandux", "123");
-		System.out.println(sas);
+		
 		
 	}
 

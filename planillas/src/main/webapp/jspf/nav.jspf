@@ -24,9 +24,13 @@
 							</ul>
 							<a
 								class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn"
-								href="#" data-activates="profile-dropdown">John Doe<i
+								href="#" data-activates="profile-dropdown"><%= cli.getUsuario() %><i
 								class="mdi-navigation-arrow-drop-down right"></i></a>
-							<p class="user-roal">Administrator</p>
+								<% if ( cli.getIdrol() == 1){ %>
+							   <p class="user-roal">Administrator</p>
+								<% }else{ %>
+								 <p class="user-roal">otro</p>
+								<% } %>
 						</div>
 					</div>
 				</li>

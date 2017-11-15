@@ -1,7 +1,9 @@
 package pe.edu.upeu.planilla.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,10 +15,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.google.gson.Gson;
 
 import pe.edu.upeu.planilla.config.AppConfig;
 import pe.edu.upeu.planilla.dao.PersonaDAO;
 import pe.edu.upeu.planilla.model.PersonaDTO;
+import pe.edu.upeu.planilla.model.UsuarioDTO;
 
 
 
@@ -24,10 +31,13 @@ import pe.edu.upeu.planilla.model.PersonaDTO;
 @RequestMapping("/")
 public class HomeController {
 
+	
+	Map<String, Object> mp = new HashMap<>();
 
 	private PersonaDAO pao = new PersonaDAO(AppConfig.getDataSource());
 	
 	private PersonaDTO p = new PersonaDTO();
+	private UsuarioDTO u = new UsuarioDTO();
 
 	@GetMapping("/")
 	public String hello() {
@@ -37,71 +47,36 @@ public class HomeController {
 
     
     @RequestMapping("/x")
-    public String Principal (Model mo, HttpServletRequest resquest , HttpServletResponse response){
-        String url ="index";
+    public String Principal (Model mo, HttpServletRequest resquest , HttpServletResponse response ) throws IOException{
+    	response.setContentType("application/json");
+    	PrintWriter out = response.getWriter();
+        String url ="";
         String user = resquest.getParameter("user");
         String Pass = resquest.getParameter("pass");
         HttpSession sesion = resquest.getSession();
-        ArrayList<Map<String, Object>> c= pao.validar(user, Pass);
+       
         try {
-           p = (PersonaDTO) pao.getByUserName(user, Pass);
-           
-           if(p == null ) {
+        	ModelAndView model = new ModelAndView();
+        u = pao.Validar(user, Pass);
+           if(u != null)  {
         	   
-           resquest.getSession().setAttribute("Cliente", c);
+             resquest.getSession().setAttribute("u", u);
+              
                 url = "index";
             }else{
+            	model.addObject("error", "Usuario y/o contraseña incorrecta!");
                 url="login";
             }
         } catch (Exception e) {
+        	 System.out.println("Error : " + e);
         }
+      
         return url;
     }
 	
 	
+
 	/*
-	@GetMapping("/login")
-	public ModelAndView hello(HttpServletRequest request, HttpServletResponse response,@RequestParam(value = "error", required = false) String error,
-			@RequestParam(value = "logout", required = false) String logout) {
-		/*Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if (auth.isAuthenticated()) {
-			System.out.println("EstÃ¡ autenticado");
-			return "menu";
-		} else {
-			System.out.println("No estÃ¡ autenticado");
-			return "login";
-		}
-		ModelAndView model = new ModelAndView();
-		if (error != null) {
-			model.addObject("error", "Usuario y/o contraseña incorrecta!");
-		}
-
-		if (logout != null) {
-			model.addObject("msg", "Has cerrado sesión.");
-		}
-		model.setViewName("login");
-		
-		return model;
-	}
-
-	@GetMapping(value = { "menu", "/"  })
-	public String menu(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
-		String Rol = ((PersonaDTO) authentication.getPrincipal()).getTipo_doc();
-		String pagina="";
-		HttpSession session = request.getSession(true);
-		System.out.println(Rol);
-		if(Rol.equals("1")) {
-			System.out.println("redireccionar a home");
-			session.setAttribute("ModE", "1");
-			pagina = "home";
-		}
-		else {
-			pagina = "menu";
-		}
-		return pagina;
-	}
-	
-	
 	@GetMapping("/logout")
 	public void logout(HttpServletRequest request, HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -114,12 +89,12 @@ public class HomeController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
-	@GetMapping("home")
+	@GetMapping("/home")
 	public String home() {
-		String pagina = "home";
+		String pagina = "index";
 		return pagina;
 	}
-	*/
+
 }
