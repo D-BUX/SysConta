@@ -19,7 +19,7 @@
 								<li class="divider"></li>
 								<li><a href="#"><i class="mdi-action-lock-outline"></i>
 										Lock</a></li>
-								<li><a href="#"><i class="mdi-hardware-keyboard-tab"></i>
+								<li><a href="logout"><i class="mdi-hardware-keyboard-tab"></i>
 										Logout</a></li>
 							</ul>
 							<a
@@ -27,7 +27,7 @@
 								href="#" data-activates="profile-dropdown"><%= cli.getUsuario() %><i
 								class="mdi-navigation-arrow-drop-down right"></i></a>
 								<% if ( cli.getIdrol() == 1){ %>
-							   <p class="user-roal">Administrator</p>
+							   <p class="user-roal">ROOt</p>
 								<% }else if ( cli.getIdrol() == 2) { %>
 								 <p class="user-roal">Contador</p>
 								 <% }else if ( cli.getIdrol() == 3) { %>

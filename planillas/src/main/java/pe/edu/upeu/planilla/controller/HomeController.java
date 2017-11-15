@@ -74,20 +74,13 @@ public class HomeController {
 	
 	
 
-	/*
+	
 	@GetMapping("/logout")
-	public void logout(HttpServletRequest request, HttpServletResponse response) {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if (auth != null) {
-			new SecurityContextLogoutHandler().logout(request, response, auth);
-			System.out.println("Logged Out Successfully!");
-		}
-		try {
-			response.sendRedirect("login?logout");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}*/
+	public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession(false);
+        session.invalidate();
+        response.sendRedirect("/");
+	}
 	
 	@GetMapping("/home")
 	public String home() {
