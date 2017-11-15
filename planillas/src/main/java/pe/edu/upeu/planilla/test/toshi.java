@@ -36,8 +36,6 @@ public class toshi {
 		ArrayList<Map<String, Object>> sas = a.validar("Brandux", "123");
 		System.out.println(sas);
 		
-		Map<String, Object> lis = a.getByUserName("Brandux");
-		System.out.println(lis);
 	}
 
 }

@@ -1,6 +1,7 @@
 package pe.edu.upeu.planilla.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
@@ -33,6 +34,8 @@ public class PersonaDTO implements UserDetails , Serializable{
 	boolean CredentialsNonExpired;
 	boolean Enabled;
 	
+	
+	private ArrayList<Map<String, Object>> VALIDAR;
 	
 	public PersonaDTO() {
 		super();
@@ -73,7 +76,9 @@ public class PersonaDTO implements UserDetails , Serializable{
 		this.idusuario = idusuario;
 	}
 
-
+	public ArrayList<Map<String, Object>> getValidar( ArrayList<Map<String, Object>> VALIDAR) {
+		return this.VALIDAR;
+	}
 
 
 	public int getIdpersona() {

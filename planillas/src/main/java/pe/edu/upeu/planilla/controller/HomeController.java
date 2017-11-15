@@ -42,11 +42,13 @@ public class HomeController {
         String user = resquest.getParameter("user");
         String Pass = resquest.getParameter("pass");
         HttpSession sesion = resquest.getSession();
-        Map<String, Object> c= pao.getByUserName(user, Pass);
-        
+        ArrayList<Map<String, Object>> c= pao.validar(user, Pass);
         try {
-            if(c.size() == 0){
-                resquest.getSession().setAttribute("Cliente", c);
+           p = (PersonaDTO) pao.getByUserName(user, Pass);
+           
+           if(p == null ) {
+        	   
+           resquest.getSession().setAttribute("Cliente", c);
                 url = "index";
             }else{
                 url="login";
