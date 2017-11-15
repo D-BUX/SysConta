@@ -1,14 +1,11 @@
 package pe.edu.upeu.planilla.model;
 
-import java.io.Serializable;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Map;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
-public class PersonaDTO implements UserDetails , Serializable{
+public class PersonaDTO {
 
 	private int idpersona;
 	private String nombre;
@@ -29,10 +26,7 @@ public class PersonaDTO implements UserDetails , Serializable{
 	private int idrol;
 	private String nombrol;
 	
-	boolean accountNonExpired;
-	boolean AccountNonLocked;
-	boolean CredentialsNonExpired;
-	boolean Enabled;
+	
 	
 	
 	private ArrayList<Map<String, Object>> VALIDAR;
@@ -200,48 +194,5 @@ public class PersonaDTO implements UserDetails , Serializable{
 		this.idusuario = idusuario;
 	}
 
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getPassword() {
-		// TODO Auto-generated method stub
-		return contraseña;
-	}
-
-	@Override
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return usuario;
-	}
-
-	@Override
-	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return accountNonExpired;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return AccountNonLocked;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return CredentialsNonExpired;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return Enabled;
-	}
-	
-	
 	
 }
