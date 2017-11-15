@@ -61,13 +61,7 @@
 <link
 	href="<c:url value='resources/plugin/js/plugins/perfect-scrollbar/perfect-scrollbar.css'/>"
 	type="text/css" rel="stylesheet" media="screen,projection" />
-<script>
-var gth_context_path = "<%=request.getContextPath()%>";
-	function setUrlPath(url) {
-		var s = gth_context_path + url;
-		return s;
-	}
-</script>
+
 
 </head>
 
