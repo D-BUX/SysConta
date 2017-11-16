@@ -6,7 +6,10 @@
 <html lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>SysConta :.</title>
+
+
+
 <!-- CSS -->
 <%@include file="../../jspf/header.jspf"%>
 

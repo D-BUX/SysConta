@@ -1,156 +1,119 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>SysConta</title>
+<!-- Materializecss compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+<!--Import Google Icon Font-->
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!--Import Materialize-Stepper CSS (after importing materialize.css) -->
 
-<link rel="apple-touch-icon-precomposed" href="<c:url value='resources/css/wizardcss.css'/>">
+
+<link
+	href="<c:url value='resources/stepper/materialize-stepper.min.css'/>"
+	type="text/css" rel="stylesheet" media="screen,projection">
 
 </head>
 <body>
 
+	<div class="container">
 
-	<div class="wrapper">
-		<div id="wizard" class="wizard">
-			<div class="wizard__content">
-				<header class="wizard__header">
-				<div class="wizard__header-overlay"></div>
-
-				<div class="wizard__header-content">
-					<h1 class="wizard__title">Get start with Javascript!</h1>
-					<p class="wizard__subheading">
-						Start with <span>3</span> simple steps.
-					</p>
+		<h3>
+			Area de Contrataciones y Registro de Trabajadores <strong>UPEU</strong>
+		</h3>
+		<br>
+		<ul class="stepper linear">
+			<li class="step active">
+				<div class="step-title waves-effect">
+					<strong>DATOS PERSONALES</strong>
 				</div>
 
-				<div class="wizard__steps">
-					<nav class="steps">
-					<div class="step">
-						<div class="step__content">
-							<p class="step__number">
-								<i class="fa fa-github-alt"></i>
-							</p>
-							<svg class="checkmark" xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 52 52"> <circle class="checkmark__circle"
-								cx="26" cy="26" r="25" fill="none" /> <path
-								class="checkmark__check" fill="none"
-								d="M14.1 27.2l7.1 7.2 16.7-16.8" /> </svg>
+				<div class="step-content">
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="nombre" name="text" type="text" class="validate" required>
+							<label for="first_name">Nombre</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="apellido" name="text" type="text" class="validate"
+								required> <label for="first_name" required>Apellido</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="text" name="text" type="text" class="validate"
+								required> <label for="first_name" required>Nombre</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="text" name="text" type="text" class="validate"
+								required> <label for="first_name" required>Nombre</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="text" name="text" type="text" class="validate"
+								required> <label for="first_name" required>Nombre</label>
+						</div>
 
-							<div class="lines">
-								<div class="line -start"></div>
+					</div>
+					<div class="step-actions">
 
-								<div class="line -background"></div>
-
-								<div class="line -progress"></div>
-							</div>
+						<button class="waves-effect waves-dark btn next-step">CONTINUE</button>
+					</div>
+				</div>
+			</li>
+			<li class="step">
+				<div class="step-title waves-effect">Passo 2</div>
+				<div class="step-content">
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="password" name="password" type="password"
+								class="validate" required> <label for="password">Your
+								password</label>
 						</div>
 					</div>
-
-					<div class="step">
-						<div class="step__content">
-							<p class="step__number">
-								<i class="fa fa-book"></i>
-							</p>
-							<svg class="checkmark" xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 52 52"> <circle class="checkmark__circle"
-								cx="26" cy="26" r="25" fill="none" /> <path
-								class="checkmark__check" fill="none"
-								d="M14.1 27.2l7.1 7.2 16.7-16.8" /> </svg>
-
-							<div class="lines">
-								<div class="line -background"></div>
-
-								<div class="line -progress"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="step">
-						<div class="step__content">
-							<p class="step__number">
-								<i class="fa fa-group"></i>
-							</p>
-							<svg class="checkmark" xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 52 52"> <circle class="checkmark__circle"
-								cx="26" cy="26" r="25" fill="none" /> <path
-								class="checkmark__check" fill="none"
-								d="M14.1 27.2l7.1 7.2 16.7-16.8" /> </svg>
-
-							<div class="lines">
-								<div class="line -background"></div>
-
-								<div class="line -progress"></div>
-							</div>
-						</div>
-					</div>
-					</nav>
-				</div>
-				</header>
-
-
-				<div class="panels">
-					<div class="panel">
-						<header class="panel__header">
-						<h2 class="panel__title">Create a Github account</h2>
-						<p class="panel__subheading">With github you can show your
-							projects and find new things everyday!</p>
-						</header>
-
-						<p class="panel__content">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna culpa qui officia deserunt mollit anim id
-							est laborum.</p>
-
-						<p class="panel__content">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit.</p>
-					</div>
-
-					<div class="panel">
-						<header class="panel__header">
-						<h2 class="panel__title">Learn more about pure Javascript.</h2>
-						<p class="panel__subheading">We have cool frameworks, but none
-							is better then VanillaJS</p>
-						</header>
-
-						<p class="panel__content">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna culpa qui officia deserunt mollit anim id
-							est laborum.</p>
-						<p class="panel__content">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna culpa qui officia deserunt mollit anim id
-							est laborum.</p>
-					</div>
-
-					<div class="panel">
-						<header class="panel__header">
-						<h2 class="panel__title">Stay in touch with the community.</h2>
-						<p class="panel__subheading">Community is everything, and here
-							we do some crazy stuff.</p>
-						</header>
-
-						<p class="panel__content">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna culpa qui officia deserunt mollit anim id
-							est laborum.</p>
+					<div class="step-actions">
+						<button class="waves-effect waves-dark btn next-step">CONTINUE</button>
+						<button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
 					</div>
 				</div>
-
-				<div class="wizard__footer">
-					<button class="button previous">Previous</button>
-					<button class="button next">Next</button>
+			</li>
+			<li class="step">
+				<div class="step-title waves-effect">Fim!</div>
+				<div class="step-content">
+					Finish!
+					<div class="step-actions">
+						<button class="waves-effect waves-dark btn" type="submit">SUBMIT</button>
+					</div>
 				</div>
-			</div>
+			</li>
+		</ul>
 
-			<h1 class="wizard__congrats-message">Congratulations, you are
-				now in a world of pain and suffering!</h1>
-		</div>
 	</div>
-
-<script type="text/javascript" src="<c:url value='resources/js/wizard.js'/>"></script>
- 
 </body>
+
+
+<!-- jQuery -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- Materializecss compiled and minified JavaScript -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+<!-- jQueryValidation Plugin -->
+<script
+	src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+<!--Import Materialize-Stepper JavaScript (after the jquery.validate.js and materialize.js) -->
+
+
+<script type="text/javascript"
+	src="<c:url value='resources/stepper/materialize-stepper.min.js'/>"></script>
+
+
+<script>
+	$(function() {
+		$('.stepper').activateStepper();
+	});
+</script>
 </html>
