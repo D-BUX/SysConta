@@ -15,7 +15,7 @@ public class EmpleadoDAO {
     public EmpleadoDAO(DataSource dataSource) {
         jt = new JdbcTemplate(dataSource);
     }
-    public List<Map<String, Object>> asignar_permiso()
+    public List<Map<String, Object>> listarempleados()
     {
        String sql="select * from persona p, empleado e,contrato co,cargo c, area a, departamento d, empresa em,sueldo s\r\n" + 
        		"where p.idpersona=e.idpersona and e.idempleado=c.idempleado and co.idcargo=c.idcargo and s.idsueldo=c.idsuedlo and c.idarea=a.idarea and d.iddepartamento=a.iddepartamento and em.idempresa=d.idempresa;"; 
