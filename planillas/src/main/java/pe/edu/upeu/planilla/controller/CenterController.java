@@ -38,6 +38,11 @@ public class CenterController {
 				
 				mp.put("datos", url);
 				break;
+				case "logout":
+					session = request.getSession(false);
+			        session.invalidate();
+			        response.sendRedirect("/login");
+	
 			}
 
 		} catch (Exception e) {

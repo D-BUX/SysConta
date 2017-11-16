@@ -100,10 +100,12 @@ public class HomeController {
 
 	
 	@GetMapping("/logout")
-	public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public String logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession session = request.getSession(false);
         session.invalidate();
-        response.sendRedirect("/");
+        request.getSession().setAttribute("u", null);
+		return "login";
+        //response.sendRedirect("/planillas/");
 	}
 	
 	@GetMapping("/home")
