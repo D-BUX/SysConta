@@ -150,7 +150,7 @@
 
 				<li class="bold"><a href="#" class="waves-effect waves-cyan"><i
 						class="mdi-action-dashboard"></i> Home</a></li>
-				<li class="bold"><a href="#" class="waves-effect waves-cyan"><i
+				<li class="bold"><a href="contrato" onclick="listarCliente();" id= "click" class="waves-effect waves-cyan"><i
 						class="mdi-action-dashboard"></i> Contratacion</a></li>
 				<li class="bold"><a href="#" class="waves-effect waves-cyan"><i
 						class="mdi-action-dashboard"></i> Reg. Trabajadores</a></li>
@@ -305,6 +305,31 @@
     Scripts
     ================================================ -->
 	<%@include file="../../jspf/general.jspf"%>
+	<script type="text/javascript">
+	
+	$(document).ready(function (){  
+	    
+	});
+ 
+	function listarCliente(){
+		  alert("cliente");
+	    $.get("cc",{opc:"cargar"},function (data){
+	       $("#contenido").html(data);
+	       // alert(data);
+	     });    
+	
+	/*$("#click").click(function listarCliente(){
+		   // alert("cliente");
+	    $.get("cc",{opc:"cargar"},function (data){
+	       $("#contenido").html(data);
+	       // alert(data);
+	     });    
+		
+	});*/
+	
+	</script>
+	
+	
 </body>
 <%
 	} else {

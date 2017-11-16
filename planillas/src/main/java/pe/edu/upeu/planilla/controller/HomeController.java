@@ -42,6 +42,10 @@ public class HomeController {
 		return "login";
 	}
 	
+	@GetMapping("/contrato")
+	public String contrato() {
+		return "Contratos";
+	}
 
     
     @RequestMapping("/x")
