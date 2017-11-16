@@ -1,4 +1,5 @@
 class Steps{
+	
   constructor(wizard){
     this.wizard = wizard;
     this.steps = this.getSteps();

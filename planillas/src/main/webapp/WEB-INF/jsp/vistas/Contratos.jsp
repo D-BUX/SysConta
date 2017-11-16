@@ -9,7 +9,6 @@
 
 <link rel="apple-touch-icon-precomposed" href="<c:url value='resources/css/wizardcss.css'/>">
 
-
 </head>
 <body>
 
@@ -152,8 +151,6 @@
 	</div>
 
 <script type="text/javascript" src="<c:url value='resources/js/wizard.js'/>"></script>
-    
-
-
+ 
 </body>
 </html>
