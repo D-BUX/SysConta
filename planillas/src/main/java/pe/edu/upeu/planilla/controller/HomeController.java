@@ -42,11 +42,33 @@ public class HomeController {
 		return "login";
 	}
 	
-	@GetMapping("/contrato")
-	public String contrato() {
-		return "Contratos";
-	}
+	@RequestMapping(value = "/C")
+    public String inicio() {
+        return "vistas/inicio";
+    }
 
+	@RequestMapping(value = "/cont")
+    public String conta() {
+        return "vistas/Contratos";
+    }
+	
+	@RequestMapping(value = "/tra")
+    public String trabajo() {
+        return "vistas/Trabajos";
+    }
+	
+	@RequestMapping(value = "/planilla")
+    public String planilla() {
+        return "vistas/Planillas";
+    }
+	
+	@RequestMapping(value = "/boletas")
+    public String boletas() {
+        return "vistas/Boletas";
+    }
+	
+	
+	
     
     @RequestMapping("/x")
     public String Principal (Model mo, HttpServletRequest resquest , HttpServletResponse response ) throws IOException{
@@ -60,11 +82,9 @@ public class HomeController {
         try {
         	ModelAndView model = new ModelAndView();
         u = pao.Validar(user, Pass);
-           if(u != null)  {
-        	   
+           if(u != null)  {  
              resquest.getSession().setAttribute("u", u);
-              
-                url = "index";
+                url = "Home";
             }else{
             	model.addObject("error", "Usuario y/o contraseña incorrecta!");
                 url="login";
