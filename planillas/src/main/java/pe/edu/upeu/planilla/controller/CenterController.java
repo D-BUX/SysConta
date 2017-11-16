@@ -1,5 +1,5 @@
 package pe.edu.upeu.planilla.controller;
 
-public class Controller {
+public class CenterController {
 
 }
