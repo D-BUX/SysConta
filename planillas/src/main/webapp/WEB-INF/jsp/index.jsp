@@ -212,9 +212,7 @@
 					<div id="row-grouping" class="section">
 
 						<div class="row">
-							<div class="col s12 m4 l3">
 								<p>Lista de Trabajadores Contratados</p>
-							</div>
 							<div class="col s12 m12 l9">
 								<table id="data-table-row-grouping" class="display"
 									cellspacing="0" width="100%">
