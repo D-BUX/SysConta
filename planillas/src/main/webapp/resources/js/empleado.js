@@ -2,9 +2,7 @@ $( document ).ready(function() {
     $.post('metod', function (obj) {
         
         var emp = obj[0];
-        console.log(emp);
-        alert(emp);
-       /*
+        console.log(emp);     /*
         $("#nombres").text(trab.NOM + " " + trab.AP_P + " " + trab.AP_M);
         $("#correo").text(trab.CORREO);
         $("#fecha").text(trab.F);
