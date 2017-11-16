@@ -150,8 +150,7 @@
 
 				<li class="bold"><a href="#" class="waves-effect waves-cyan"><i
 						class="mdi-action-dashboard"></i> Home</a></li>
-				<li class="bold"><a href="contrato" onclick="listarCliente();"
-					id="click" class="waves-effect waves-cyan"><i
+				<li class="bold"><a href="#" class="waves-effect waves-cyan"><i
 						class="mdi-action-dashboard"></i> Contratacion</a></li>
 				<li class="bold"><a href="#" class="waves-effect waves-cyan"><i
 						class="mdi-action-dashboard"></i> Reg. Trabajadores</a></li>
@@ -193,9 +192,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col s12 m12 l12">
-							<h5 class="breadcrumbs-title">
-								Hola ,
-								<%=cli.getUsuario()%></h5>
+							<h5 class="breadcrumbs-title">Hola  , <%=cli.getUsuario()%></h5>
 							<ol class="breadcrumbs">
 								<li><a href="index.html">Dashboard</a></li>
 								<li><a href="#">CSS</a></li>
@@ -215,78 +212,9 @@
 					<div id="row-grouping" class="section">
 
 						<div class="row">
-							<p>Lista de Trabajadores Contratados</p>
-							<div class="col s12 m12 l9">
-								<table id="data-table-row-grouping" class="display"
-									cellspacing="0" width="100%">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Position</th>
-											<th>Office</th>
-											<th>Age</th>
-											<th>Start date</th>
-											<th>Salary</th>
-										</tr>
-									</thead>
-
-
-
-									<tbody>
-
-
-										<tr>
-											<td>Haley Kennedy</td>
-											<td>Senior Marketing Designer</td>
-											<td>London</td>
-											<td>43</td>
-											<td>2012/12/18</td>
-											<td>$313,500</td>
-										</tr>
-										<tr>
-											<td>Tatyana Fitzpatrick</td>
-											<td>Regional Director</td>
-											<td>London</td>
-											<td>19</td>
-											<td>2010/03/17</td>
-											<td>$385,750</td>
-										</tr>
-										<tr>
-											<td>Michael Silva</td>
-											<td>Marketing Designer</td>
-											<td>London</td>
-											<td>66</td>
-											<td>2012/11/27</td>
-											<td>$198,500</td>
-										</tr>
-
-
-										<tr>
-											<td>Haley Kennedy</td>
-											<td>Senior Marketing Designer</td>
-											<td>London</td>
-											<td>43</td>
-											<td>2012/12/18</td>
-											<td>$313,500</td>
-										</tr>
-										<tr>
-											<td>Tatyana Fitzpatrick</td>
-											<td>Regional Director</td>
-											<td>London</td>
-											<td>19</td>
-											<td>2010/03/17</td>
-											<td>$385,750</td>
-										</tr>
-										<tr>
-											<td>Michael Silva</td>
-											<td>Marketing Designer</td>
-											<td>London</td>
-											<td>66</td>
-											<td>2012/11/27</td>
-											<td>$198,500</td>
-										</tr>
-									</tbody>
-								</table>
+								<p>Lista de Trabajadores Contratados</p>
+							<div id="contTable" class="col s12 m12 l9">
+								
 							</div>
 						</div>
 					</div>
@@ -300,55 +228,14 @@
 		</div>
 	</div>
 
-	<div class="fixed-action-btn horizontal click-to-toggle"
-		style="position: absolute; right: 19px;">
-		<a class="btn-floating btn-large red"> <i
-			class="mdi-navigation-menu"></i>
-		</a>
-		<ul>
-			<li><a class="btn-floating red"><i
-					class="large mdi-editor-insert-chart"></i></a></li>
-			<li><a class="btn-floating yellow darken-1"><i
-					class="large mdi-editor-format-quote"></i></a></li>
-			<li><a class="btn-floating green"><i
-					class="large mdi-editor-publish"></i></a></li>
-			<li><a class="btn-floating blue"><i
-					class="large mdi-editor-attach-file"></i></a></li>
-		</ul>
-	</div>
-
 
 	<%@include file="../../jspf/footer.jspf"%>
 	<!-- ================================================
     Scripts
     ================================================ -->
 	<%@include file="../../jspf/general.jspf"%>
-	<script type="text/javascript">
-	
-	$(document).ready(function (){  
-	    
-	});
- 
-	function listarCliente(){
-		  alert("cliente");
-	    $.get("cc",{opc:"cargar"},function (data){
-	       $("#contenido").html(data);
-	       // alert(data);
-	     });    
-	
-	/*$("#click").click(function listarCliente(){
-		   // alert("cliente");
-	    $.get("cc",{opc:"cargar"},function (data){
-	       $("#contenido").html(data);
-	       // alert(data);
-	     });    
-		
-	});*/
-	
-	</script>
-
-
 </body>
+<script src="<c:url value='resources/js/empleado.js'/>"></script>
 <%
 	} else {
 		out.print("<script> window.parent.location.href = '/planillas/';</script>");

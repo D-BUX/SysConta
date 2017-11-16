@@ -14,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import pe.edu.upeu.planilla.dao.EmpleadoDAO;
 import pe.edu.upeu.planilla.dao.PersonaDAO;
 
 
@@ -61,5 +62,10 @@ public class AppConfig extends WebMvcConfigurerAdapter {
    {
       return new PersonaDAO(getDataSource());
    }
-	
+	 @Bean
+	   public EmpleadoDAO gEmpleadoDAO()
+	   {
+	      return new EmpleadoDAO(getDataSource());
+	   }
+
 }

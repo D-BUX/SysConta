@@ -7,6 +7,7 @@ import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,10 +19,9 @@ import pe.edu.upeu.planilla.dao.EmpleadoDAO;
 
 @Controller
 public class CenterController2 {
-	
+	@Autowired
 	private EmpleadoDAO eO;
-    Map<String, Object> mp = new HashMap<>();
-
+	List<Map<String, Object>> list;
 	@RequestMapping("/empleado")
 	public ModelAndView paginas(ModelAndView modelo,HttpServletRequest request,HttpServletResponse response)
 	{
@@ -44,21 +44,21 @@ public class CenterController2 {
         String opc = request.getParameter("opc");
         try {
         	switch (opc) {
-			case "listarem":
-				mp.put("listaemp", eO.listarempleados());
-				
+			case "listaremp":
+				list=eO.listarempleados();
 				break;
 
 			default:
 				break;
 			}
+				
 			
 		} catch (Exception e) {
 
 			System.out.println("Error:"+e);
 		}
         Gson gson = new Gson();
-        out.println(gson.toJson(mp));
+        out.println(gson.toJson(list));
 		out.flush();
 		out.close();
 	}
