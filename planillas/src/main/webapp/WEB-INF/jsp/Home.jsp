@@ -151,17 +151,33 @@
 					if ((cli.getIdrol() == 1) || (cli.getIdrol() == 2)) {
 				%>
 
-				<li class="bold"><a href="#" id = "home" name="myframe" class="waves-effect waves-cyan"><i	class="mdi-action-dashboard"></i> Home</a></li>
-				<li class="bold"><a href="#" id="con" name="myframe"  class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Contratación</a></li>
-				<li class="bold"><a href="#" id="trabajo" name="myframe" class="waves-effect waves-cyan"><i	class="mdi-action-dashboard"></i> Reg. Trabajadores</a></li>
-				<li class="bold"><a href="#" id="planilla" name="myframe" class="waves-effect waves-cyan"><i	class="mdi-action-dashboard"></i> Planillas</a></li>
-				<li class="bold"><a href="#" id="boletas"  name="myframe" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Boletas</a></li>
+				<li class="bold"><a href="#" id="home" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Home</a></li>
+				<li class="bold"><a href="#" id="con" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Contratación</a></li>
+				<li class="bold"><a href="#" id="trabajo" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Reg. Trabajadores</a></li>
+				<li class="bold"><a href="#" id="planilla" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Planillas</a></li>
+				<li class="bold"><a href="#" id="boletas" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Boletas</a></li>
 				<%
 					} else if (cli.getIdrol() == 3) {
 				%>
-				<li class="bold"><a href="#" name="myframe" class="waves-effect waves-cyan"><i	class="mdi-action-dashboard"></i> Home</a></li>
-				<li class="bold"><a href="#"  id="planilla" name="myframe" class="waves-effect waves-cyan"><i	class="mdi-action-dashboard"></i> Planillas</a></li>
-				<li class="bold"><a href="#"  id="boletas" name="myframe" class="waves-effect waves-cyan"><i	class="mdi-action-dashboard"></i> Boletas</a></li>
+				<li class="bold"><a href="#" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Home</a></li>
+				<li class="bold"><a href="#" id="planilla" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Planillas</a></li>
+				<li class="bold"><a href="#" id="boletas" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Boletas</a></li>
 
 				<%
 					}
@@ -204,30 +220,28 @@
 
 			<!--start container-->
 
+			<div class="container">
+				<div class="container" id="Contenido" class="newContent"></div>
 
-			<div class="container" id="Contenido" class="newContent">
-			
-			
-			
-			</div>
+				<div id="content" class="oldContent">
 
-			<div id="content" class="oldContent">
+					<div class="row">
+						<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+							<h1 class="page-title txt-color-blueDark"
+								style="margin: 0px 0px 0px;">
+								<i class="fa-fw fa fa-home" id="icon_menu"></i><label
+									class="titulo_menu"></label><span> </span>
+							</h1>
+						</div>
+						<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+							<div class="animacion_load"></div>
+						</div>
 
-				<div class="row">
-					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-						<h1 class="page-title txt-color-blueDark"
-							style="margin: 0px 0px 0px;">
-							<i class="fa-fw fa fa-home" id="icon_menu"></i><label
-								class="titulo_menu"></label><span> </span>
-						</h1>
+						<iframe id="myframe" name="myframe" class="iframe_principal"
+							scrolling="si" width="100%" height="2000" frameborder="0"
+							src="<c:url value='C'/>"></iframe>
 					</div>
-					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-						<div class="animacion_load"></div>
-					</div>
-
-					<iframe id="myframe" name="myframe" class="iframe_principal" scrolling="si" width="100%" height="2000" frameborder="0" 	src="<c:url value='C'/>"></iframe>
 				</div>
-
 
 			</div>
 
@@ -239,7 +253,7 @@
 		</div>
 	</div>
 
-	
+
 
 	<%@include file="../../jspf/footer.jspf"%>
 	<!-- ================================================
@@ -249,61 +263,57 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 
-			$("#con").click(function () {
-				$('#myframe').attr('src','<c:url value="cont"/>');
-		        $(".newContent").hide();
-		        $(".oldContent").show();
-		       
-		    });
-			
-			$("#home").click(function () {
-				$('#myframe').attr('src','<c:url value="cont"/>');
-		        $(".newContent").hide();
-		        $(".oldContent").show();
-		       
-		    });
-			
-			$("#trabajo").click(function () {
-				$('#myframe').attr('src','<c:url value="tra"/>');
-		        $(".newContent").hide();
-		        $(".oldContent").show();
-		       
-		    });
-			
-			$("#planilla").click(function () {
-				$('#myframe').attr('src','<c:url value="planilla"/>');
-		        $(".newContent").hide();
-		        $(".oldContent").show();
-		       
-		    });
-			
-			
-			$("#boletas").click(function () {
-				$('#myframe').attr('src','<c:url value="boletas"/>');
-		        $(".newContent").hide();
-		        $(".oldContent").show();
-		       
-		    });
-			
-			
+			$("#con").click(function() {
+				$('#myframe').attr('src', '<c:url value="cont"/>');
+				$(".newContent").hide();
+				$(".oldContent").show();
+
+			});
+
+			$("#home").click(function() {
+				$('#myframe').attr('src', '<c:url value="C"/>');
+				$(".newContent").hide();
+				$(".oldContent").show();
+
+			});
+
+			$("#trabajo").click(function() {
+				$('#myframe').attr('src', '<c:url value="tra"/>');
+				$(".newContent").hide();
+				$(".oldContent").show();
+
+			});
+
+			$("#planilla").click(function() {
+				$('#myframe').attr('src', '<c:url value="planilla"/>');
+				$(".newContent").hide();
+				$(".oldContent").show();
+
+			});
+
+			$("#boletas").click(function() {
+				$('#myframe').attr('src', '<c:url value="boletas"/>');
+				$(".newContent").hide();
+				$(".oldContent").show();
+
+			});
+
 			/*$('nav a[href !="#"]').click(function () {
 				var con = "cont";
 				$('#myframe').attr('src','<c:url value='+cont+'/>');
-		        $(".newContent").hide();
-		        if (typeof pagedestroy === "function") {
-		            pagedestroy();
-		            //  pagedestroy = undefined;
-		        }
-		        pagefunction = null;
-		        $(".newContent").removeData().html("");
-		        $(".newContent").empty();
-		        $(".oldContent").show();
-		        //loadURL("cont", $(".newContent"));
-		    });
-			*/
+			    $(".newContent").hide();
+			    if (typeof pagedestroy === "function") {
+			        pagedestroy();
+			        //  pagedestroy = undefined;
+			    }
+			    pagefunction = null;
+			    $(".newContent").removeData().html("");
+			    $(".newContent").empty();
+			    $(".oldContent").show();
+			    //loadURL("cont", $(".newContent"));
+			});
+			 */
 		});
-		
-		
 	</script>
 
 
