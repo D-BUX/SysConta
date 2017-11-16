@@ -213,77 +213,8 @@
 
 						<div class="row">
 								<p>Lista de Trabajadores Contratados</p>
-							<div class="col s12 m12 l9">
-								<table id="data-table-row-grouping" class="display"
-									cellspacing="0" width="100%">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Position</th>
-											<th>Office</th>
-											<th>Age</th>
-											<th>Start date</th>
-											<th>Salary</th>
-										</tr>
-									</thead>
-
-
-
-									<tbody>
-
-
-										<tr>
-											<td>Haley Kennedy</td>
-											<td>Senior Marketing Designer</td>
-											<td>London</td>
-											<td>43</td>
-											<td>2012/12/18</td>
-											<td>$313,500</td>
-										</tr>
-										<tr>
-											<td>Tatyana Fitzpatrick</td>
-											<td>Regional Director</td>
-											<td>London</td>
-											<td>19</td>
-											<td>2010/03/17</td>
-											<td>$385,750</td>
-										</tr>
-										<tr>
-											<td>Michael Silva</td>
-											<td>Marketing Designer</td>
-											<td>London</td>
-											<td>66</td>
-											<td>2012/11/27</td>
-											<td>$198,500</td>
-										</tr>
-
-
-										<tr>
-											<td>Haley Kennedy</td>
-											<td>Senior Marketing Designer</td>
-											<td>London</td>
-											<td>43</td>
-											<td>2012/12/18</td>
-											<td>$313,500</td>
-										</tr>
-										<tr>
-											<td>Tatyana Fitzpatrick</td>
-											<td>Regional Director</td>
-											<td>London</td>
-											<td>19</td>
-											<td>2010/03/17</td>
-											<td>$385,750</td>
-										</tr>
-										<tr>
-											<td>Michael Silva</td>
-											<td>Marketing Designer</td>
-											<td>London</td>
-											<td>66</td>
-											<td>2012/11/27</td>
-											<td>$198,500</td>
-										</tr>
-									</tbody>
-								</table>
+							<div id="contTable" class="col s12 m12 l9">
+								
 							</div>
 						</div>
 					</div>

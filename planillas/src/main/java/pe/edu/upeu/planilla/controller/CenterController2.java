@@ -43,7 +43,14 @@ public class CenterController2 {
         PrintWriter out = response.getWriter();
         String opc = request.getParameter("opc");
         try {
-        	
+        	switch (opc) {
+			case "listaremp":
+				list=eO.listarempleados();
+				break;
+
+			default:
+				break;
+			}
 				list=eO.listarempleados();
 				
 			
