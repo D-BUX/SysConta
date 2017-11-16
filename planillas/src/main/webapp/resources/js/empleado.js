@@ -15,7 +15,9 @@ function listarempleado()
 	            s += '<td>'+obj[i].area+'</td>';
 	            s += '<td>'+obj[i].departamento+'</td>';
 	            s += '<td>'+obj[i].empresa+'</td>';
+	            s += '<td><a class="btn-floating waves-effect waves-light "><i class="mdi-content-clear"></i></a>' +' '+'<a class="btn-floating waves-effect waves-light "><i class="mdi-editor-mode-edit"></i></a></td>';
 	            s += '</tr>';
+	   
 			}
 	        $("#contTable").empty();
 	        $("#contTable").append(createTable());
@@ -35,6 +37,7 @@ function createTable() {
     s += '<th>Area</th>';
     s += '<th>Departamento</th>';
     s += '<th>Empresa </th>';
+    s += '<th>Opciones </th>';
     s += ' </tr>';
     s += '</thead>';
     s += '<tbody id="data"></tbody>';
