@@ -304,6 +304,7 @@
     ================================================ -->
 	<%@include file="../../jspf/general.jspf"%>
 </body>
+<script src="<c:url value='resources/js/empleado.js'/>"></script>
 <%
 	} else {
 		out.print("<script> window.parent.location.href = '/planillas/';</script>");
