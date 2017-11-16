@@ -26,7 +26,7 @@ function listarempleado()
 	    });
 	};
 function createTable() {
-    var s = '<table id="data-table-row-grouping" class="display" cellspacing="0" width="130%">';
+    var s = '<table id="data-table-row-grouping" class="display" cellspacing="0" width="100%">';
     s += '<thead>';
     s += '<tr>';
     s += '<th>Nombres y Apellidos</th>';
