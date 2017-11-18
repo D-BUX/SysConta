@@ -49,7 +49,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/cont")
     public String conta() {
-        return "vistas/Contratos";
+        return "vistas/toshi";
     }
 	
 	@RequestMapping(value = "/tra")
