@@ -14,9 +14,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import pe.edu.upeu.planilla.dao.ContratoDAO;
 import pe.edu.upeu.planilla.dao.EmpleadoDAO;
 import pe.edu.upeu.planilla.dao.PersonaDAO;
-
 
 @Configuration
 @EnableWebMvc
@@ -29,17 +29,16 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		super.addResourceHandlers(registry);
 	}
 
-	
-	 @Bean
-		public static DataSource getDataSource() {
-			DriverManagerDataSource dataSource = new DriverManagerDataSource();
-			dataSource.setDriverClassName("com.mysql.jdbc.Driver");//driver-conexion//
-			dataSource.setUrl("jdbc:mysql://localhost:3306/planillasdb");//url-conexion//
-			dataSource.setUsername("root");//user-conexion//
-			dataSource.setPassword("");//pass-conexion//
-			return dataSource;
-		}
-	
+	@Bean
+	public static DataSource getDataSource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");// driver-conexion//
+		dataSource.setUrl("jdbc:mysql://localhost:3306/planillasdb");// url-conexion//
+		dataSource.setUsername("root");// user-conexion//
+		dataSource.setPassword("");// pass-conexion//
+		return dataSource;
+	}
+
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -50,22 +49,24 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		return viewResolver;
 	}
 
-	
-	
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
 	}
 
-	 @Bean
-   public PersonaDAO getPersonaDao()
-   {
-      return new PersonaDAO(getDataSource());
-   }
-	 @Bean
-	   public EmpleadoDAO gEmpleadoDAO()
-	   {
-	      return new EmpleadoDAO(getDataSource());
-	   }
+	@Bean
+	public PersonaDAO getPersonaDao() {
+		return new PersonaDAO(getDataSource());
+	}
+
+	@Bean
+	public EmpleadoDAO gEmpleadoDAO() {
+		return new EmpleadoDAO(getDataSource());
+	}
+
+	@Bean
+	public ContratoDAO getContratoDAO() {
+		return new ContratoDAO(getDataSource());
+	}
 
 }
