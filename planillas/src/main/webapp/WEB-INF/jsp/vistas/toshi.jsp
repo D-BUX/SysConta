@@ -14,9 +14,10 @@
 <script src="https://use.fontawesome.com/6a6312675e.js"></script>
 
 
-<link rel="stylesheet" href="<c:url value='resources/wizard/css/style.css'/>">
+<link rel="stylesheet"
+	href="<c:url value='resources/wizard/css/style.css'/>">
 
-
+<%@include file="../../../jspf/header.jspf"%>
 </head>
 <body>
 
@@ -27,9 +28,10 @@
 				<div class="wizard__header-overlay"></div>
 
 				<div class="wizard__header-content">
-					<h1 class="wizard__title">Get start with Javascript!</h1>
+					<h1 class="wizard__title">Bienvenido al area de Contrataciones
+						!!</h1>
 					<p class="wizard__subheading">
-						Start with <span>3</span> simple steps.
+						Repuestos y Servicios Luchano <strong>SAC.</strong>
 					</p>
 				</div>
 
@@ -100,50 +102,287 @@
 
 				<div class="panels">
 					<div class="panel">
+
 						<header class="panel__header">
-						<h2 class="panel__title">Create a Github account</h2>
-						<p class="panel__subheading">With github you can show your
-							projects and find new things everyday!</p>
+						<h2 class="panel__title">Registros Personales</h2>
 						</header>
 
-						<p class="panel__content">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna culpa qui officia deserunt mollit anim id
-							est laborum.</p>
+						<div class="panel__content">
+							<div class="col s12 m8 l9">
+								<div class="row">
+									<form class="col s12">
+									
+										<div class="row">
+											<div class="input-field col s6">
+												<input id="nombre" type="text" class="validate"> <label
+													for="last_name">Nombre</label>
+											</div>
+											<div class="input-field col s6">
+												<input id="apellido" type="text" class="validate"> <label
+													for="last_name">Apellido</label>
+											</div>
+										</div>
 
-						<p class="panel__content">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit.</p>
+										<div class="row">
+											<div class="col s12 m12 l12">
+												<div class="input-field col s4">
+													<select>
+														<option value="" disabled>Tipo Documento</option>
+														<option value="DNI" selected>DNI</option>
+														<option value="Carnet">Carnet Extranjeria</option>
+													</select> <label>Selecciona Identificacion</label>
+												</div>
+												<div class="input-field col s8">
+													<input id="numdoc" type="text" class="validate"> <label
+														for="password">Numero</label>
+												</div>
+											</div>
+
+										</div>
+										<div class="row">
+											<div class="input-field col s12">
+												<input id="direcc" type="text" class="validate"> <label
+													for="password">Direccion</label>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="input-field col s6">
+												<input id="phone-demo" type="text" class=""> <label
+													for="phone_demo">Phone</label>
+											</div>
+											<div class="input-field col s6">
+												<select>
+													<option value="" disabled>Estado Civil</option>
+													<option value="Soltero" selected>Solero</option>
+													<option value="Casado">Casado</option>
+													<option value="Viudo">Viudo</option>
+												</select> <label>Selecciona Estado Civil</label>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="input-field col s8">
+												<input id="correo" type="email" class="validate"> <label
+													for="password">E-mail</label>
+											</div>
+											<div class="input-field col s4">
+												<select>
+													<option value="" disabled>Sexo</option>
+													<option value="M" selected>M</option>
+													<option value="F">F</option>
+												</select> <label>Selecciona Sexo</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="input-field col s6">
+												<input placeholder="2015-01-01" id="fecha_nac" type="text"
+													class=""> <label for="date_demo1">Fecha de
+													nacimientos</label>
+											</div>
+											<div class="row section">
+												<div class="col s12 m4 l12">
+													<p>Selecciona foto de perfil</p>
+												</div>
+												<div class="col s12 m8 l12">
+													<input type="file" id="foto" class="dropify"
+														data-default-file="" />
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+
+						</div>
+						<p class="panel__content">
+							En presente apartado representa el area de contrataciones para la
+							empresa <strong>Repuestos y servicios Lucharno SAC.</strong>
+							porfavor rellenar los campos correctamente. Atte:
+							<stong>Secretaria General.</stong>
+						</p>
+
 					</div>
 
 					<div class="panel">
+
 						<header class="panel__header">
-						<h2 class="panel__title">Learn more about pure Javascript.</h2>
-						<p class="panel__subheading">We have cool frameworks, but none
-							is better then VanillaJS</p>
+						<h2 class="panel__title">Area de Registro Familiar</h2>
 						</header>
 
-						<p class="panel__content">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna culpa qui officia deserunt mollit anim id
-							est laborum.</p>
-						<p class="panel__content">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna culpa qui officia deserunt mollit anim id
-							est laborum.</p>
+						<div class="panel__content">
+							<div class="col s12 m8 l9">
+								<div class="row">
+									<form class="col s12">
+										<div class="row">
+											<div class="input-field col s6">
+												<input id="nombre" type="text" class="validate"> <label
+													for="last_name">Nombre</label>
+											</div>
+											<div class="input-field col s6">
+												<input id="apellido" type="text" class="validate"> <label
+													for="last_name">Apellido</label>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col s12 m12 l12">
+												<div class="input-field col s4">
+													<select>
+														<option value="" disabled>Tipo Documento</option>
+														<option value="DNI" selected>DNI</option>
+														<option value="Carnet">Carnet Extranjeria</option>
+													</select> <label>Selecciona Identificacion</label>
+												</div>
+												<div class="input-field col s8">
+													<input id="numdoc" type="text" class="validate"> <label
+														for="password">Numero</label>
+												</div>
+											</div>
+
+										</div>
+										<div class="row">
+											<div class="col s12 m12 l12">
+												<div class="input-field col s6">
+													<select>
+														<option value="" disabled>Parentescp</option>
+														<option value="hijo" selected>Hijo (a)</option>
+														<option value="esposa">Esposa</option>
+													</select> <label>Selecciona Parentesco</label>
+												</div>
+												
+												<div class="input-field col s6">
+													<select>
+														<option value="" disabled>Educacion</option>
+														<option value="primaria" selected>Primaria</option>
+														<option value="secundaria">Secundaria</option>
+														<option value="superiro">Superiror</option>
+													</select> <label>Selecciona Educacion</label>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<p class="panel__content">
+							En presente apartado representa el area de contrataciones para la
+							empresa <strong>Repuestos y servicios Lucharno SAC.</strong>
+							porfavor rellenar los campos correctamente. Atte:
+							<stong>Secretaria General.</stong>
+						</p>
+
+
+
 					</div>
 
 					<div class="panel">
+
+
 						<header class="panel__header">
-						<h2 class="panel__title">Stay in touch with the community.</h2>
-						<p class="panel__subheading">Community is everything, and here
-							we do some crazy stuff.</p>
+						<h2 class="panel__title">Comtrato</h2>
 						</header>
 
-						<p class="panel__content">Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna culpa qui officia deserunt mollit anim id
-							est laborum.</p>
+						<div class="panel__content">
+							<div class="col s12 m8 l9">
+								<div class="row">
+									<form class="col s12">
+										<div class="row">
+											<div class="input-field col s6">
+												<input id="nombre" type="text" class="validate"> <label
+													for="last_name">Nombre</label>
+											</div>
+											<div class="input-field col s6">
+												<input id="apellido" type="text" class="validate"> <label
+													for="last_name">Apellido</label>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col s12 m12 l12">
+												<div class="input-field col s4">
+													<select>
+														<option value="" disabled>Tipo Documento</option>
+														<option value="DNI" selected>DNI</option>
+														<option value="Carnet">Carnet Extranjeria</option>
+													</select> <label>Selecciona Identificacion</label>
+												</div>
+												<div class="input-field col s8">
+													<input id="numdoc" type="text" class="validate"> <label
+														for="password">Numero</label>
+												</div>
+											</div>
+
+										</div>
+										<div class="row">
+											<div class="input-field col s12">
+												<input id="direcc" type="text" class="validate"> <label
+													for="password">Direccion</label>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="input-field col s6">
+												<input id="phone-demo" type="text" class=""> <label
+													for="phone_demo">Phone</label>
+											</div>
+											<div class="input-field col s6">
+												<select>
+													<option value="" disabled>Estado Civil</option>
+													<option value="Soltero" selected>Solero</option>
+													<option value="Casado">Casado</option>
+													<option value="Viudo">Viudo</option>
+												</select> <label>Selecciona Estado Civil</label>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="input-field col s8">
+												<input id="correo" type="email" class="validate"> <label
+													for="password">E-mail</label>
+											</div>
+											<div class="input-field col s4">
+												<select>
+													<option value="" disabled>Sexo</option>
+													<option value="M" selected>M</option>
+													<option value="F">F</option>
+												</select> <label>Selecciona Sexo</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="input-field col s6">
+												<input placeholder="2015-01-01" id="fecha_nac" type="text"
+													class=""> <label for="date_demo1">Fecha de
+													nacimientos</label>
+											</div>
+											<div class="row section">
+												<div class="col s12 m4 l12">
+													<p>Selecciona foto de perfil</p>
+												</div>
+												<div class="col s12 m8 l12">
+													<input type="file" id="foto" class="dropify"
+														data-default-file="" />
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+
+						</div>
+						<p class="panel__content">
+							En presente apartado representa el area de contrataciones para la
+							empresa <strong>Repuestos y servicios Lucharno SAC.</strong>
+							porfavor rellenar los campos correctamente. Atte:
+							<stong>Secretaria General.</stong>
+						</p>
+
+
 					</div>
+
+
 				</div>
 
 				<div class="wizard__footer">
@@ -152,15 +391,47 @@
 				</div>
 			</div>
 
-			<h1 class="wizard__congrats-message">Congratulations, you are
-				now in a world of pain and suffering!</h1>
+			<h1 class="wizard__congrats-message"><strong>Gracias..!</strong> Ha sido registrado con exito--!!</h1>
 		</div>
 	</div>
 	<script
 		src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
 
 	<script src="<c:url value='resources/wizard/js/index.js'/>"></script>
+	<%@include file="../../../jspf/general.jspf"%>
 
+	<script type="text/javascript">
+		$(document).ready(
+				function() {
+					// Basic
+					$('.dropify').dropify();
+
+					// Used events
+					var drEvent = $('.dropify-event').dropify();
+
+					drEvent.on('dropify.beforeClear', function(event, element) {
+						return confirm("Do you really want to delete \""
+								+ element.filename + "\" ?");
+					});
+
+					drEvent.on('dropify.afterClear', function(event, element) {
+						alert('File deleted');
+					});
+				});
+
+		// Basic
+
+		$('#date-demo1').formatter({
+			'pattern' : '{{9999}}-{{99}}-{{99}}',
+		});
+
+		// Advanced
+
+		$('#phone-demo').formatter({
+			'pattern' : '({{999}}) {{999}}-{{999}}',
+			'persistent' : true
+		});
+	</script>
 
 </body>
 </html>

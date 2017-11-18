@@ -33,3 +33,7 @@
 
     
      <link href="<c:url value='resources/plugin/js/plugins/data-tables/css/jquery.dataTables.min.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
+     
+     
+      <!--dropify-->
+  <link href="<c:url value='resources/plugin/js/plugins/dropify/css/dropify.min.css'/>" type="text/css" rel="stylesheet" media="screen,projection">

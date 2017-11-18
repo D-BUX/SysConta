@@ -23,3 +23,9 @@
     <script type="text/javascript" src="<c:url value='resources/plugin/js/plugins/data-tables/js/jquery.dataTables.min.js'/>"></script>
     <script type="text/javascript" src="<c:url value='resources/plugin/js/plugins/data-tables/data-tables-script.js'/>"></script>
     
+    <script type="text/javascript" src="<c:url value='resources/plugin/js/plugins/formatter/jquery.formatter.min.js'/>"></script>
+    
+    
+     <!-- dropify -->
+    <script type="text/javascript" src="<c:url value='resources/plugin/js/plugins/dropify/js/dropify.min.js'/>"></script>
+    

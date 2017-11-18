@@ -203,9 +203,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col s12 m12 l12">
-							<h5 class="breadcrumbs-title">
-								Hola ,
-								<%=cli.getUsuario()%></h5>
+
 							<ol class="breadcrumbs">
 								<li><a href="index.html">Dashboard</a></li>
 								<li><a href="#">CSS</a></li>
