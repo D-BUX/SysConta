@@ -42,4 +42,12 @@ public class ContratoDAO {
 		}
 		return a;
 	}
+	
+	//metodo para listar el combobox de cargo
+	public List<Map<String, Object>> ListCargo (){
+		return jt.queryForList("SELECT idcargo, cargo FROM planillasdb.cargo");
+	}
+	
+	
+	
 }

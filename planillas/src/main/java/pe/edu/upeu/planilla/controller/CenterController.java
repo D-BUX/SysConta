@@ -3,6 +3,7 @@ package pe.edu.upeu.planilla.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +28,7 @@ public class CenterController {
 
 	Map<String, Object> mp = new HashMap<>();
 	Map<String, Object> rpta = new HashMap<String, Object>();
+	List<Map<String, Object>> list;
 
 	PrintWriter out;
 	Gson gson;
@@ -52,6 +54,12 @@ public class CenterController {
 		        rpta.put("rpta", "1");
 				respuesta(response);
 				break;
+				
+			case  "cargo":
+				list = c.ListCargo();
+				rpta.put("rpta", "1");
+				respuesta(response);
+				break;
 			case "logout":
 				session = request.getSession(false);
 				session.invalidate();
@@ -66,10 +74,11 @@ public class CenterController {
 		respuesta(response);
 	}
 
+	
 	public void respuesta(HttpServletResponse response) {
 		try {
 			out = response.getWriter();
-			out.println(gson.toJson(mp));
+			out.println(gson.toJson(list));
 			out.flush();
 			out.close();
 		} catch (IOException e) {
@@ -78,7 +87,6 @@ public class CenterController {
 			out.close();
 		}
 	}
-
 	
 
 }

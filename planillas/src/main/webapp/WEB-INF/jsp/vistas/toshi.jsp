@@ -21,8 +21,8 @@
 </head>
 <body>
 
-	<div class="container" >
-		<div class="wrapper" >
+	<div class="container">
+		<div class="wrapper">
 			<div id="wizard" class="wizard">
 				<div class="wizard__content">
 					<header class="wizard__header">
@@ -127,8 +127,8 @@
 
 											<div class="row">
 												<div class="col s12 m12 l12">
-													<div class="input-field col s4">
-														<select>
+													<div  class="input-field col s4">
+														<select id="tipodoc">
 															<option value="" disabled>Tipo Documento</option>
 															<option value="DNI" selected>DNI</option>
 															<option value="Carnet">Carnet Extranjeria</option>
@@ -154,7 +154,7 @@
 														for="phone_demo">Phone</label>
 												</div>
 												<div class="input-field col s6">
-													<select>
+													<select id="civil">
 														<option value="" disabled>Estado Civil</option>
 														<option value="Soltero" selected>Solero</option>
 														<option value="Casado">Casado</option>
@@ -169,7 +169,7 @@
 														for="password">E-mail</label>
 												</div>
 												<div class="input-field col s4">
-													<select>
+													<select id="sexo">
 														<option value="" disabled>Sexo</option>
 														<option value="M" selected>M</option>
 														<option value="F">F</option>
@@ -219,11 +219,11 @@
 										<form class="col s12">
 											<div class="row">
 												<div class="input-field col s6">
-													<input id="nombre" type="text" class="validate"> <label
+													<input id="nombref" type="text" class="validate"> <label
 														for="last_name">Nombre</label>
 												</div>
 												<div class="input-field col s6">
-													<input id="apellido" type="text" class="validate">
+													<input id="apellidof" type="text" class="validate">
 													<label for="last_name">Apellido</label>
 												</div>
 											</div>
@@ -234,7 +234,6 @@
 														<select>
 															<option value="" disabled>Tipo Documento</option>
 															<option value="DNI" selected>DNI</option>
-															<option value="Carnet">Carnet Extranjeria</option>
 														</select> <label>Selecciona Identificacion</label>
 													</div>
 													<div class="input-field col s8">
@@ -247,7 +246,7 @@
 											<div class="row">
 												<div class="col s12 m12 l12">
 													<div class="input-field col s6">
-														<select>
+														<select id="parentesco">
 															<option value="" disabled>Parentescp</option>
 															<option value="hijo" selected>Hijo (a)</option>
 															<option value="esposa">Esposa</option>
@@ -255,7 +254,7 @@
 													</div>
 
 													<div class="input-field col s6">
-														<select>
+														<select id="education">
 															<option value="" disabled>Educacion</option>
 															<option value="primaria" selected>Primaria</option>
 															<option value="secundaria">Secundaria</option>
@@ -297,7 +296,7 @@
 												</div>
 
 												<div class="input-field col s6">
-													<select>
+													<select id="cargo">
 														<option value="" disabled>Cargo</option>
 														<option value="DNI" selected>DNI</option>
 														<option value="Carnet">Carnet Extranjeria</option>
@@ -321,17 +320,18 @@
 											</div>
 											<div class="row">
 												<div class="input-field col s6">
-													<select>
+													<select id="seguro">
 														<option value="" disabled>Seguro</option>
 														<option value="DNI" selected>DNI</option>
 														<option value="Carnet">Carnet Extranjeria</option>
 													</select> <label>Selecciona Seguro</label>
 												</div>
 												<div class="input-field col s6">
-													<select>
+													<select id="categoria">
 														<option value="" disabled>Categoria</option>
-														<option value="DNI" selected>DNI</option>
-														<option value="Carnet">Carnet Extranjeria</option>
+														<option value="OBRERO" selected>Obrero</option>
+														<option value="EMPLEADO">Empleado</option>
+														<option value="EXPONTANEO">Expontaneo</option>
 													</select> <label>Selecciona Cateogria</label>
 												</div>
 											</div>
@@ -350,24 +350,34 @@
 
 					<div class="wizard__footer">
 						<button class="button previous">Previous</button>
-						<button class="button next">Next</button>
+						<button id ="ocu" class="button next">Next</button>
+						
+						<button  id="apa" onclick="agregar()"  class="button" type="submit"
+							name="action">
+							Registar <i class="mdi-content-send right"></i>
+						</button>
 					</div>
 				</div>
 
 				<h1 class="wizard__congrats-message">
 					<strong>Gracias..!</strong> Ha sido registrado con exito--!!
+					
 				</h1>
 			</div>
 		</div>
 	</div>
 	<%@include file="../../../jspf/general.jspf"%>
-	
-	<script	src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
+
+	<script
+		src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
 
 	<script src="<c:url value='resources/wizard/js/index.js'/>"></script>
-	
+	<script src="<c:url value='resources/js/businessCore.js'/>"></script>
+
 	<script type="text/javascript">
 		$(document).ready(
+				
+				
 				function() {
 					// Basic
 					$('.dropify').dropify();
@@ -383,7 +393,7 @@
 					drEvent.on('dropify.afterClear', function(event, element) {
 						alert('File deleted');
 					});
-				});
+		});
 
 		// Basic
 
@@ -408,13 +418,30 @@
 		// Creates a dropdown of 15 years to control year
 		});
 
-		$(function() {
-			$('#txtDate1').datepicker();
-			$('#txtDate1').datepicker('option', {
-				dateFormat : 'yyyy-mm-dd'
-			});
-		});
+		
+		
+		
+		/*
+		function listarempleado()
+		{
+			 $.post('cc?opc=cargo', function (obj) {
+			        var s='';
+			        var emp = obj[0];
+			        console.log(emp.nombre+emp.cargo+emp.area);
+			        for (var i = 0; i < obj.length; i++) {
+						s += '<option value="" disabled>Cargo</option>';
+			            s += '<option value="'obj[i].idcargo'" selected>'+obj[i].cargo+'</option>';
+					}
+			        $("#cargo").empty();
+			        $("#cargo").append(s);
+			       // $('#data-table-row-grouping').dataTable();
+			        
+			    });
+			};
+		*/
+		
 	</script>
+	
 
 </body>
 </html>

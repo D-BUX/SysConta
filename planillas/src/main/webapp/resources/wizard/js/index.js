@@ -1,4 +1,8 @@
+
+
 'use strict';
+
+
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -6,6 +10,7 @@ var Steps = function () {
   function Steps(wizard) {
     _classCallCheck(this, Steps);
 
+	 $('#apa').hide();
     this.wizard = wizard;
     this.steps = this.getSteps();
     this.stepsQuantity = this.getStepsQuantity();
@@ -120,13 +125,16 @@ var Wizard = function () {
   Wizard.prototype.handleNextStepButton = function handleNextStepButton() {
     if (this.currentStep === this.stepsQuantity - 1) {
       this.nextControl.innerHTML = 'Conclude!';
+      $('#apa').show();
+      $('#ocu').hide();
 
       this.nextControl.removeEventListener('click', this.nextControlMoveStepMethod);
       this.nextControl.addEventListener('click', this.concludeControlMoveStepMethod);
       this.nextControl.addEventListener('click', this.wizardConclusionMethod);
     } else {
       this.nextControl.innerHTML = 'Next';
-
+      $('#ocu').show();
+      $('#apa').hide();
       this.nextControl.addEventListener('click', this.nextControlMoveStepMethod);
       this.nextControl.removeEventListener('click', this.concludeControlMoveStepMethod);
       this.nextControl.removeEventListener('click', this.wizardConclusionMethod);
