@@ -25,6 +25,9 @@
 		</div>
 
 	</div>
+	<button class="btn waves-effect waves-light " type="submit" id="enviar">Send
+                        <i class="mdi-content-send right"></i>
+                      </button>
 </div>
 
 	<%@include file="../../../jspf/footer.jspf"%>

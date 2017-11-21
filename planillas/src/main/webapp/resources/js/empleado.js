@@ -7,7 +7,6 @@ function listarempleado()
 	 $.post('metod?opc=listaremp', function (obj) {
 	        var s='';
 	        var emp = obj[0];
-	        console.log(emp.nombre+emp.cargo+emp.area);
 	        for (var i = 0; i < obj.length; i++) {
 				s += '<tr>';
 	            s += '<td>'+obj[i].nombre+ ' '+obj[i].apellido+'</td>';
@@ -17,6 +16,7 @@ function listarempleado()
 	            s += '<td>'+obj[i].departamento+'</td>';
 	            s += '<td>'+obj[i].empresa+'</td>';
 	            s += '<td><a class="btn-floating waves-effect waves-light "><i class="mdi-content-clear" style="background: #FF5252 !important;"></i></a>' +' '+'<a class="btn-floating waves-effect waves-light "><i class="mdi-editor-mode-edit" style="background:#00bcd4; "></i></a>'+' '+'<a class="btn-floating waves-effect waves-light "><i class="mdi-editor-attach-money" style="background: #0097a7 !important"></i></a>'+'</td>';
+	            s += '<td><input type="checkbox" id="test'+i+'" class="checkBoxClass" value="' + obj[i].nombre +'" /><label for="test'+i+'">Yellow</label></td>';
 	            s += '</tr>';
 	   
 			}
@@ -25,7 +25,20 @@ function listarempleado()
 	        $("#data").empty();
 	        $("#data").append(s);
 	        $('#data-table-row-grouping').dataTable();
-	        
+	        $("#ckbCheckAll").click(function () {
+                $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+            });
+	        function getSelected() {
+                var allVals = [];
+                $('#data :checked').each(function () {
+                    allVals.push($(this).val());
+                });
+                return allVals;
+            }
+	        $("#enviar").click(function (){
+                var arrid=getSelected();                                     
+                console.log(arrid);                                
+            });
 	    });
 	};
 function createTable() {
@@ -39,6 +52,7 @@ function createTable() {
     s += '<th>Departamento</th>';
     s += '<th>Empresa </th>';
     s += '<th>Opciones </th>';
+    s += '<th>Seleccionar</th>';
     s += ' </tr>';
     s += '</thead>';
     s += '<tbody id="data"></tbody>';
