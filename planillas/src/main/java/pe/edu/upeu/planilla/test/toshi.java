@@ -1,11 +1,13 @@
 package pe.edu.upeu.planilla.test;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.sql.DataSource;
 
 import pe.edu.upeu.planilla.config.AppConfig;
+import pe.edu.upeu.planilla.dao.ContratoDAO;
 import pe.edu.upeu.planilla.dao.PersonaDAO;
 
 
@@ -15,6 +17,7 @@ public class toshi {
 		// TODO Auto-generated method stub
 		conect();
 		validar();
+		list();
 	}
 	
 	
@@ -36,5 +39,14 @@ public class toshi {
 		
 		
 	}
+	public static void list () {
+		DataSource d = AppConfig.getDataSource();
 
+		ContratoDAO a = new ContratoDAO(d);
+		
+		 List<Map<String, Object>> as = a.ListCargo();
+		System.out.println(as);
+	}
+	
+	
 }

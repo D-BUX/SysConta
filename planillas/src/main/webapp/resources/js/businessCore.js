@@ -8,6 +8,7 @@ function agregar (){
 	var numdocdoc = $("#numdoc").val();
 	var direcc = $("#direcc").val();
 	var phone = $("#phone-demo").val();
+	var email =$("#correo").val();
 	var civil = $("#civil").val();
 	var sexo = $("#sexo").val();
 	var fechanac = $("#fecha_nac").val();
@@ -27,7 +28,42 @@ function agregar (){
 	var fin = $("#txtDate2").val();
 	var seguro = $("#seguro").val();
 	var categoria = $("#categoria").val();
+	alert ( "cargo" + cargo + "seguro " + seguro);
 	
+	/// Enviamos los datos al Controlador
+	var url ="cc?opc=cargar";
+	var data ="&nom" + nombre ;
+	data += "&ape" + apellido;
+	data += "&tipodoc" + tipodoc;
+	data += "&numdocdoc" + numdocdoc;
+	data += "&direcc" + direcc;
+	data += "&phone" + phone;
+	data += "&email" + email;
+	data += "&civil" + civil;
+	data += "&sexo" + sexo;
+	data += "&fechanac" + fechanac;
+	data += "&foto" + foto;
+	data += "&codigo" + codigo;
+	//cargo 
+	data += "&cargo" + cargo;
+	//contrato
+	data += "&inicio" + inicio;
+	data += "&fin" + fin;
+	data += "&seguro" + seguro;
+	data += "&categoria" + categoria;
+	//carga familiar
+	data += "&nombref" + nombref;
+	data += "&apellidof" + apellidof;
+	data += "&numdocf" + numdocf;
+	data += "&parentesco" + parentesco;
+	data += "&educationf" + educationf;
+
+	$.post(url,data,function(objJson){
+		var rspta = objJson.rptasd;
+		if(rsta ==1){
+			alert ("correcto");
+		}
+	});
 	
-	alert ("asasa"+ tipodoc);
+		
 }

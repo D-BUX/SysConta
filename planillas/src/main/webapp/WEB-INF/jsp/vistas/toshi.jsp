@@ -127,7 +127,7 @@
 
 											<div class="row">
 												<div class="col s12 m12 l12">
-													<div  class="input-field col s4">
+													<div class="input-field col s4">
 														<select id="tipodoc">
 															<option value="" disabled>Tipo Documento</option>
 															<option value="DNI" selected>DNI</option>
@@ -294,14 +294,15 @@
 													<input id="codigo" type="text" class="validate"> <label
 														for="last_name">Codigo Empleado</label>
 												</div>
-
-												<div class="input-field col s6">
-													<select id="cargo">
-														<option value="" disabled>Cargo</option>
-														<option value="DNI" selected>DNI</option>
-														<option value="Carnet">Carnet Extranjeria</option>
-													</select> <label>Selecciona Cargo</label>
-												</div>
+											
+													<div id="llenarcargo" class="input-field col s6">
+														<select>
+															<option value="" disabled>Cargo</option>
+															<option value="DNI" selected>DNI</option>
+															<option value="Carnet">Carnet Extranjeria</option>
+														</select> <label>Selecciona Cargo</label>
+													</div>
+											
 
 											</div>
 
@@ -319,7 +320,7 @@
 
 											</div>
 											<div class="row">
-												<div class="input-field col s6">
+												<div id="llenarseguro" class="input-field col s6">
 													<select id="seguro">
 														<option value="" disabled>Seguro</option>
 														<option value="DNI" selected>DNI</option>
@@ -350,9 +351,9 @@
 
 					<div class="wizard__footer">
 						<button class="button previous">Previous</button>
-						<button id ="ocu" class="button next">Next</button>
-						
-						<button  id="apa" onclick="agregar()"  class="button" type="submit"
+						<button id="ocu" class="button next">Next</button>
+
+						<button id="apa" onclick="agregar()" class="button" type="submit"
 							name="action">
 							Registar <i class="mdi-content-send right"></i>
 						</button>
@@ -361,7 +362,7 @@
 
 				<h1 class="wizard__congrats-message">
 					<strong>Gracias..!</strong> Ha sido registrado con exito--!!
-					
+
 				</h1>
 			</div>
 		</div>
@@ -372,76 +373,55 @@
 		src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
 
 	<script src="<c:url value='resources/wizard/js/index.js'/>"></script>
-	<script src="<c:url value='resources/js/businessCore.js'/>"></script>
+	
+	<script src="<c:url value='resources/js/contrajs.js'/>"></script>
 
 	<script type="text/javascript">
-		$(document).ready(
+		$(document).ready(function() {
+			listarCargo();
+			listarSeguro();
+		});
+
+		function listarCargo() {
+			$.post('cc?opc=cargo', function(objJson) {
+				var s = '';
+				var lista = objJson.pr;
+				var rspt = objJson.rpta;
+				console.log(lista);
+				console.log(rspt);
+				for (var i = 0; i < lista.length; i++) {
+					s += '<option value="'+ lista[i].idcargo + '" >'+ lista[i].cargo + '</option>';
+					//s += '</select> <label>Selecciona Cargo</label>';
+				}
 				
-				
-				function() {
-					// Basic
-					$('.dropify').dropify();
-
-					// Used events
-					var drEvent = $('.dropify-event').dropify();
-
-					drEvent.on('dropify.beforeClear', function(event, element) {
-						return confirm("Do you really want to delete \""
-								+ element.filename + "\" ?");
-					});
-
-					drEvent.on('dropify.afterClear', function(event, element) {
-						alert('File deleted');
-					});
-		});
-
-		// Basic
-
-		$('#date-demo1').formatter({
-			'pattern' : '{{9999}}-{{99}}-{{99}}',
-		});
-
-		// Advanced
-
-		$('#phone-demo').formatter({
-			'pattern' : '({{999}}) {{999}}-{{999}}',
-			'persistent' : true
-		});
-
-		$('.datepicker').pickadate({
-			min : new Date(),
-		});
-
-		$('.datepicker').pickadate({
-			selectMonths : true, // Creates a dropdown to control month
-			selectYears : 15
-		// Creates a dropdown of 15 years to control year
-		});
-
-		
-		
-		
-		/*
-		function listarempleado()
-		{
-			 $.post('cc?opc=cargo', function (obj) {
-			        var s='';
-			        var emp = obj[0];
-			        console.log(emp.nombre+emp.cargo+emp.area);
-			        for (var i = 0; i < obj.length; i++) {
-						s += '<option value="" disabled>Cargo</option>';
-			            s += '<option value="'obj[i].idcargo'" selected>'+obj[i].cargo+'</option>';
+				$("#llenarcargo").empty();
+				s='<select id="cargo"><option value="" disabled>Cargo</option>'+s+'</select></select> <label>Selecciona Cargo</label>';
+ 				$("#llenarcargo").append(s);
+				$("#cargo").material_select();
+			});
+		}
+			
+			function listarSeguro() {
+				$.post('cc?opc=seguro', function(objJson) {
+					var v = '';
+					var list = objJson.s;
+					var rspta = objJson.rptas;
+					console.log(list);
+					console.log(rspta);
+					for (var i = 0; i < list.length; i++) {
+						v += '<option value="'+ list[i].idseguro + '" >'+ list[i].nombreafp + '</option>';
+						//s += '</select> <label>Selecciona Cargo</label>';
 					}
-			        $("#cargo").empty();
-			        $("#cargo").append(s);
-			       // $('#data-table-row-grouping').dataTable();
-			        
-			    });
-			};
-		*/
+					
+					$("#llenarseguro").empty();
+					v='<select id="seguro"><option value="" disabled>Seguro</option>'+v+'</select></select> <label>Selecciona Seguro</label>';
+	 				$("#llenarseguro").append(v);
+					$("#seguro").material_select();
+				});
+			}
 		
 	</script>
-	
+	<script src="<c:url value='resources/js/businessCore.js'/>"></script>
 
 </body>
 </html>
