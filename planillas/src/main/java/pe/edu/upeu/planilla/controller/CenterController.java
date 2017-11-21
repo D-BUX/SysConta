@@ -42,7 +42,7 @@ public class CenterController {
 		PrintWriter out = response.getWriter();
 		String url = "/Contratos";
 		String opc = request.getParameter("opc");
-		System.out.println(opc);
+		
 		try {
 			switch (opc) {
 			case "cargar":
@@ -71,23 +71,29 @@ public class CenterController {
 		        String numdocf = request.getParameter("numdocf");
 		        String parentesco = request.getParameter("parentesco");
 		        String educationf = request.getParameter("educationf");
+		        System.out.println(nom);
 		        //Registramos
 		        int a = c.Contartar(nom, ape, tipodoc, numdocdoc, direcc, phone, email, civil, sexo, fechanac, foto, codigo, cargo, inicio, fin, seguro, categoria, nombref, apellidof, numdocf, parentesco, educationf);
 	
+		        if(a ==1) {
+		        	 mp.put("rptasd", "1");
+		        }else {
+		        	 mp.put("rptasd", "0");
+		        }
 		       //controler
-		        rpta.put("rptasd", a);
+		       
 				
 				break;
 				
 			case  "cargo":
 				 mp.put("pr",  c.ListCargo());
 				 mp.put("rpta", "1");
-				 System.out.println(c.ListCargo());
+				 //System.out.println(c.ListCargo());
 				break;
 			case  "seguro":
 				 mp.put("s",  c.ListSeguro());
 				 mp.put("rptas", "1");
-				 System.out.println(c.ListCargo());
+				// System.out.println(c.ListSeguro());
 				break;
 			case "logout":
 				session = request.getSession(false);

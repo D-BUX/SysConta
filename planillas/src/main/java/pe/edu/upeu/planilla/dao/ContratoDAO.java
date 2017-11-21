@@ -29,20 +29,21 @@ public class ContratoDAO {
 			,String civil , String sexo, String fnac , String foto , String Codigo, String cargo , String fechaIni , String fechafin , String seguro, String categoria
 			, String nombreF , String apellidoF , String dni, String parentesco , String education) {
 		int a = 0;
+		int as =0;
 		try {
 			String sql ="{call planillasdb.CONTRATACIONES('"+p_nombre.trim()+"', '"+p_apellido.trim()+"', '"+tipodoc+"', '"+numdoc+"', '"+direc+"', '"+telef+"', '"+Correo+"', "
 					+ "'"+civil+"', '"+sexo+"', '"+fnac+"', '"+foto+"' , '"+Codigo+"', 'ACTIVO', "+cargo+" , '"+fechaIni+"', '"+fechafin+"', "+seguro+","
 							+ " '"+categoria+"', '"+nombreF+"', '"+apellidoF+"', '"+dni+"', '"+parentesco+"', '"+education+"')}";
 			a = jt.update(sql);
 			if(a != 0) {
-				a =1;
+				as = 1;
 			}else {
-				a=0;
+				as=0;
 			}
 		} catch (Exception e) {
 			System.out.println("error");
 		}
-		return a;
+		return as;
 	}
 	
 	//metodo para listar el combobox de cargo
