@@ -16,7 +16,7 @@ function listarempleado()
 	            s += '<td>'+obj[i].area+'</td>';
 	            s += '<td>'+obj[i].departamento+'</td>';
 	            s += '<td>'+obj[i].empresa+'</td>';
-	            s += '<td><a class="btn-floating waves-effect waves-light "><i class="mdi-content-clear"></i></a>' +' '+'<a class="btn-floating waves-effect waves-light "><i class="mdi-editor-mode-edit"></i></a></td>';
+	            s += '<td><a class="btn-floating waves-effect waves-light "><i class="mdi-content-clear" style="background: #FF5252 !important;"></i></a>' +' '+'<a class="btn-floating waves-effect waves-light "><i class="mdi-editor-mode-edit" style="background:#00bcd4; "></i></a>'+' '+'<a class="btn-floating waves-effect waves-light "><i class="mdi-editor-attach-money" style="background: #0097a7 !important"></i></a>'+'</td>';
 	            s += '</tr>';
 	   
 			}
