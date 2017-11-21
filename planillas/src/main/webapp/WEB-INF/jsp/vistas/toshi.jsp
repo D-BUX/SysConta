@@ -336,6 +336,29 @@
 													</select> <label>Selecciona Cateogria</label>
 												</div>
 											</div>
+											<div class="row">
+												<div class="input-field col s12">
+													<input id="banco" type="text" class="validate"> <label
+														for="last_name">Banco</label>
+												</div>
+											</div>
+
+
+											<div class="row">
+												<div class="input-field col s4">
+													<select id="tipoCuenta" >
+														<option value="" disabled>Tipo Cuenta</option>
+														<option value="DNI" selected>Ahorro</option>
+														<option value="Carnet">2</option>
+													</select> <label>Selecciona Cuenta</label>
+												</div>
+
+												<div class="input-field col s8">
+													<input id="numCuenta" type="text" class="validate"> <label
+														for="last_name">N* Cuenta</label>
+												</div>
+											</div>
+
 										</form>
 									</div>
 								</div>

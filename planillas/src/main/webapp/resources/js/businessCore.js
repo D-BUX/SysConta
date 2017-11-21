@@ -28,6 +28,12 @@ function agregar (){
 	var fin = $("#txtDate2").val();
 	var seguro = $("#seguro").val();
 	var categoria = $("#categoria").val();
+	
+	// get cuenta
+	var banco = $("#banco").val();
+	var tipoCuenta = $("#tipoCuenta").val();
+	var numCuenta = $("#numCuenta").val();
+	
 	//alert ( "cargo" + cargo + "seguro " + seguro);
 	
 	/// Enviamos los datos al Controlador
@@ -57,6 +63,11 @@ function agregar (){
 	data += "&numdocf=" + numdocf;
 	data += "&parentesco=" + parentesco;
 	data += "&educationf=" + educationf;
+	
+	//cuenta
+	data += "&banco=" + banco;
+	data += "&tipoCuenta=" + tipoCuenta;
+	data += "&numCuenta=" + numCuenta;
 	
 	if(nombre != "" || apellido!="" ){
 		$.post(url,data,function(objJson){

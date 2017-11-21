@@ -71,9 +71,16 @@ public class CenterController {
 		        String numdocf = request.getParameter("numdocf");
 		        String parentesco = request.getParameter("parentesco");
 		        String educationf = request.getParameter("educationf");
+		        //cargar cuenta
+		        String banco = request.getParameter("banco");
+		        String tipoCuenta = request.getParameter("tipoCuenta");
+		        String numCuenta = request.getParameter("numCuenta");
+		        
+		        
 		        //Registramos
-		        int a = c.Contartar(nom, ape, tipodoc, numdocdoc, direcc, phone, email, civil, sexo, fechanac, foto, codigo, cargo, inicio, fin, seguro, categoria, nombref, apellidof, numdocf, parentesco, educationf);
-	
+		        //int a = c.Contartar(nom, ape, tipodoc, numdocdoc, direcc, phone, email, civil, sexo, fechanac, foto, codigo, cargo, inicio, fin, seguro, categoria, nombref, apellidof, numdocf, parentesco, educationf);
+		        int a = c.ContartarAct(nom, ape, tipodoc, numdocdoc, direcc, phone, email, civil, sexo, fechanac, foto, codigo, cargo, inicio, fin, seguro, categoria, nombref, apellidof, numdocf, parentesco, educationf, tipoCuenta, numCuenta, banco);
+		        
 		       //controler
 		        rpta.put("rptasd", a);
 				
