@@ -55,5 +55,24 @@ public class ContratoDAO {
 			return (ArrayList<Map<String, Object>>) jt.queryForList("SELECT d.idseguro, d.nombreafp FROM planillasdb.seguro d;");
 		}
 	
-	
+		// metodo para registrar persona , empleado , carga familiar  y contrato- cuenta
+		public int ContartarAct(String p_nombre , String p_apellido, String tipodoc, String numdoc , String direc , String telef, String Correo
+				,String civil , String sexo, String fnac , String foto , String Codigo, String cargo , String fechaIni , String fechafin , String seguro, String categoria
+				, String nombreF , String apellidoF , String dni, String parentesco , String education , String tipo_cuenta , String p_numero , String nom_banco) {
+			int a = 0;
+			try {
+				String sql ="{call planillasdb.CONTRATACIONES('"+p_nombre.trim()+"', '"+p_apellido.trim()+"', '"+tipodoc+"', '"+numdoc+"', '"+direc+"', '"+telef+"', '"+Correo+"', "
+						+ "'"+civil+"', '"+sexo+"', '"+fnac+"', '"+foto+"' , '"+Codigo+"', 'ACTIVO', "+cargo+" , '"+fechaIni+"', '"+fechafin+"', "+seguro+","
+								+ " '"+categoria+"', '"+nombreF+"', '"+apellidoF+"', '"+dni+"', '"+parentesco+"', '"+education+"', '"+ tipo_cuenta +"' , '"+p_numero+"', '"+nom_banco+"')}";
+				a = jt.update(sql);
+				if(a != 0) {
+					a =1;
+				}else {
+					a=0;
+				}
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+			return a;
+		}
 }
