@@ -28,42 +28,51 @@ function agregar (){
 	var fin = $("#txtDate2").val();
 	var seguro = $("#seguro").val();
 	var categoria = $("#categoria").val();
-	alert ( "cargo" + cargo + "seguro " + seguro);
+	//alert ( "cargo" + cargo + "seguro " + seguro);
 	
 	/// Enviamos los datos al Controlador
 	var url ="cc?opc=cargar";
-	var data ="&nom" + nombre ;
-	data += "&ape" + apellido;
-	data += "&tipodoc" + tipodoc;
-	data += "&numdocdoc" + numdocdoc;
-	data += "&direcc" + direcc;
-	data += "&phone" + phone;
-	data += "&email" + email;
-	data += "&civil" + civil;
-	data += "&sexo" + sexo;
-	data += "&fechanac" + fechanac;
-	data += "&foto" + foto;
-	data += "&codigo" + codigo;
+	var data ="&nom=" + nombre ;
+	data += "&ape=" + apellido;
+	data += "&tipodoc=" + tipodoc;
+	data += "&numdocdoc=" + numdocdoc;
+	data += "&direcc=" + direcc;
+	data += "&phone=" + phone;
+	data += "&email=" + email;
+	data += "&civil=" + civil;
+	data += "&sexo=" + sexo;
+	data += "&fechanac=" + fechanac;
+	data += "&foto=" + foto;
+	data += "&codigo=" + codigo;
 	//cargo 
-	data += "&cargo" + cargo;
+	data += "&cargo=" + cargo;
 	//contrato
-	data += "&inicio" + inicio;
-	data += "&fin" + fin;
-	data += "&seguro" + seguro;
-	data += "&categoria" + categoria;
+	data += "&inicio=" + inicio;
+	data += "&fin=" + fin;
+	data += "&seguro=" + seguro;
+	data += "&categoria=" + categoria;
 	//carga familiar
-	data += "&nombref" + nombref;
-	data += "&apellidof" + apellidof;
-	data += "&numdocf" + numdocf;
-	data += "&parentesco" + parentesco;
-	data += "&educationf" + educationf;
-
-	$.post(url,data,function(objJson){
-		var rspta = objJson.rptasd;
-		if(rsta ==1){
-			alert ("correcto");
-		}
-	});
+	data += "&nombref=" + nombref;
+	data += "&apellidof=" + apellidof;
+	data += "&numdocf=" + numdocf;
+	data += "&parentesco=" + parentesco;
+	data += "&educationf=" + educationf;
+	
+	if(nombre != "" || apellido!="" ){
+		$.post(url,data,function(objJson){
+			var rspta = objJson.rptasd;
+			if(rspta == 1){
+				swal("Good job!", "You clicked the button!", "success");
+				window.location.href='tra';
+				
+			}else{
+				alert ("nou");
+			}
+		});
+	}else{
+		swal("Cancelled", "Your imaginary file is safe :)", "error");
+		//window.location.href='tra';
+	}
 	
 		
 }

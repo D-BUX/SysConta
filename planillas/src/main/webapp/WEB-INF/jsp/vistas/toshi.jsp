@@ -294,15 +294,15 @@
 													<input id="codigo" type="text" class="validate"> <label
 														for="last_name">Codigo Empleado</label>
 												</div>
-											
-													<div id="llenarcargo" class="input-field col s6">
-														<select>
-															<option value="" disabled>Cargo</option>
-															<option value="DNI" selected>DNI</option>
-															<option value="Carnet">Carnet Extranjeria</option>
-														</select> <label>Selecciona Cargo</label>
-													</div>
-											
+
+												<div id="llenarcargo" class="input-field col s6">
+													<select>
+														<option value="" disabled>Cargo</option>
+														<option value="DNI" selected>DNI</option>
+														<option value="Carnet">Carnet Extranjeria</option>
+													</select> <label>Selecciona Cargo</label>
+												</div>
+
 
 											</div>
 
@@ -360,6 +360,7 @@
 					</div>
 				</div>
 
+
 				<h1 class="wizard__congrats-message">
 					<strong>Gracias..!</strong> Ha sido registrado con exito--!!
 
@@ -373,53 +374,68 @@
 		src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
 
 	<script src="<c:url value='resources/wizard/js/index.js'/>"></script>
-	
+
 	<script src="<c:url value='resources/js/contrajs.js'/>"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
 			listarCargo();
 			listarSeguro();
+
+			$('.btn-success').click(function() {
+				swal("Good job!", "You clicked the button!", "success");
+			});
 		});
 
 		function listarCargo() {
-			$.post('cc?opc=cargo', function(objJson) {
-				var s = '';
-				var lista = objJson.pr;
-				var rspt = objJson.rpta;
-				console.log(lista);
-				console.log(rspt);
-				for (var i = 0; i < lista.length; i++) {
-					s += '<option value="'+ lista[i].idcargo + '" >'+ lista[i].cargo + '</option>';
-					//s += '</select> <label>Selecciona Cargo</label>';
-				}
-				
-				$("#llenarcargo").empty();
-				s='<select id="cargo"><option value="" disabled>Cargo</option>'+s+'</select></select> <label>Selecciona Cargo</label>';
- 				$("#llenarcargo").append(s);
-				$("#cargo").material_select();
-			});
+			$
+					.post(
+							'cc?opc=cargo',
+							function(objJson) {
+								var s = '';
+								var lista = objJson.pr;
+								var rspt = objJson.rpta;
+								console.log(lista);
+								console.log(rspt);
+								for (var i = 0; i < lista.length; i++) {
+									s += '<option value="'+ lista[i].idcargo + '" >'
+											+ lista[i].cargo + '</option>';
+									//s += '</select> <label>Selecciona Cargo</label>';
+								}
+
+								$("#llenarcargo").empty();
+								s = '<select id="cargo"><option value="" disabled>Cargo</option>'
+										+ s
+										+ '</select></select> <label>Selecciona Cargo</label>';
+								$("#llenarcargo").append(s);
+								$("#cargo").material_select();
+							});
 		}
-			
-			function listarSeguro() {
-				$.post('cc?opc=seguro', function(objJson) {
-					var v = '';
-					var list = objJson.s;
-					var rspta = objJson.rptas;
-					console.log(list);
-					console.log(rspta);
-					for (var i = 0; i < list.length; i++) {
-						v += '<option value="'+ list[i].idseguro + '" >'+ list[i].nombreafp + '</option>';
-						//s += '</select> <label>Selecciona Cargo</label>';
-					}
-					
-					$("#llenarseguro").empty();
-					v='<select id="seguro"><option value="" disabled>Seguro</option>'+v+'</select></select> <label>Selecciona Seguro</label>';
-	 				$("#llenarseguro").append(v);
-					$("#seguro").material_select();
-				});
-			}
-		
+
+		function listarSeguro() {
+			$
+					.post(
+							'cc?opc=seguro',
+							function(objJson) {
+								var v = '';
+								var list = objJson.s;
+								var rspta = objJson.rptas;
+								console.log(list);
+								console.log(rspta);
+								for (var i = 0; i < list.length; i++) {
+									v += '<option value="'+ list[i].idseguro + '" >'
+											+ list[i].nombreafp + '</option>';
+									//s += '</select> <label>Selecciona Cargo</label>';
+								}
+
+								$("#llenarseguro").empty();
+								v = '<select id="seguro"><option value="" disabled>Seguro</option>'
+										+ v
+										+ '</select></select> <label>Selecciona Seguro</label>';
+								$("#llenarseguro").append(v);
+								$("#seguro").material_select();
+							});
+		}
 	</script>
 	<script src="<c:url value='resources/js/businessCore.js'/>"></script>
 
