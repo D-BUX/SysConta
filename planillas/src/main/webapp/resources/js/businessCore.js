@@ -62,16 +62,16 @@ function agregar (){
 		$.post(url,data,function(objJson){
 			var rspta = objJson.rptasd;
 			if(rspta == 1){
-				//swal("Good job!", "You clicked the button!", "success");
-				$('#salir').attr('href', 'tra');
+				swal("Good job!", "You clicked the button!", "success");
+				window.location.href='tra';
+				
 			}else{
 				alert ("nou");
 			}
 		});
 	}else{
-		//$('#salir').attr('href', 'tra'); 
 		swal("Cancelled", "Your imaginary file is safe :)", "error");
-		 //window.location.replace("http://localhost:9090/planillas/x");
+		//window.location.href='tra';
 	}
 	
 		

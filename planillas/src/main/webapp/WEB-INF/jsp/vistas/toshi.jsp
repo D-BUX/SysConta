@@ -354,8 +354,8 @@
 						<button id="ocu" class="button next">Next</button>
 
 						<button id="apa" onclick="agregar()" class="button" type="submit"
-							name="action"><a id="salir" >
-							Registar <i class="mdi-content-send right"></a></i>
+							name="action">
+							Registar <i class="mdi-content-send right"></i>
 						</button>
 					</div>
 				</div>
