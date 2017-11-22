@@ -69,13 +69,13 @@ function agregar (){
 	data += "&tipoCuenta=" + tipoCuenta;
 	data += "&numCuenta=" + numCuenta;
 	
+	alert(data);
 	if(nombre != "" || apellido!="" ){
 		$.post(url,data,function(objJson){
 			var rspta = objJson.rptasd;
 			if(rspta == 1){
 				swal("Good job!", "You clicked the button!", "success");
 				window.location.href='tra';
-				
 			}else{
 				alert ("nou");
 			}

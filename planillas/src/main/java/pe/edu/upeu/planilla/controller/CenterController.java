@@ -82,8 +82,14 @@ public class CenterController {
 		        int a = c.ContartarAct(nom, ape, tipodoc, numdocdoc, direcc, phone, email, civil, sexo, fechanac, foto, codigo, cargo, inicio, fin, seguro, categoria, nombref, apellidof, numdocf, parentesco, educationf, tipoCuenta, numCuenta, banco);
 		        
 		       //controler
-		        rpta.put("rptasd", a);
-				
+		        
+		        if(a!=0) {
+		        	rpta.put("rptasd", "1");	
+		        }else {
+		        	rpta.put("rptasd", "0");
+					
+		        }
+		        
 				break;
 				
 			case  "cargo":

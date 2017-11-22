@@ -348,8 +348,8 @@
 												<div class="input-field col s4">
 													<select id="tipoCuenta" >
 														<option value="" disabled>Tipo Cuenta</option>
-														<option value="DNI" selected>Ahorro</option>
-														<option value="Carnet">2</option>
+														<option value="Ahorro" selected>Ahorro</option>
+														<option value="2">2</option>
 													</select> <label>Selecciona Cuenta</label>
 												</div>
 

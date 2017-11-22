@@ -61,7 +61,7 @@ public class ContratoDAO {
 				, String nombreF , String apellidoF , String dni, String parentesco , String education , String tipo_cuenta , String p_numero , String nom_banco) {
 			int a = 0;
 			try {
-				String sql ="{call planillasdb.CONTRATACIONES('"+p_nombre.trim()+"', '"+p_apellido.trim()+"', '"+tipodoc+"', '"+numdoc+"', '"+direc+"', '"+telef+"', '"+Correo+"', "
+				String sql ="{call planillasdb.ContratoActual('"+p_nombre.trim()+"', '"+p_apellido.trim()+"', '"+tipodoc+"', '"+numdoc+"', '"+direc+"', '"+telef+"', '"+Correo+"', "
 						+ "'"+civil+"', '"+sexo+"', '"+fnac+"', '"+foto+"' , '"+Codigo+"', 'ACTIVO', "+cargo+" , '"+fechaIni+"', '"+fechafin+"', "+seguro+","
 								+ " '"+categoria+"', '"+nombreF+"', '"+apellidoF+"', '"+dni+"', '"+parentesco+"', '"+education+"', '"+ tipo_cuenta +"' , '"+p_numero+"', '"+nom_banco+"')}";
 				a = jt.update(sql);
