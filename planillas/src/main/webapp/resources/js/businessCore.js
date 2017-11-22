@@ -73,7 +73,7 @@ function agregar (){
 	if(nombre != "" || apellido!="" ){
 		$.post(url,data,function(objJson){
 			var rspta = objJson.rptasd;
-			if(rspta == 1){
+			if(rspta != 0){
 				swal("Good job!", "You clicked the button!", "success");
 				window.location.href='tra';
 			}else{
