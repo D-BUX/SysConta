@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,12 +12,10 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.google.gson.Gson;
-import com.sun.javafx.scene.control.ControlAcceleratorSupport;
 
 import pe.edu.upeu.planilla.config.AppConfig;
 import pe.edu.upeu.planilla.dao.ContratoDAO;
@@ -97,6 +94,13 @@ public class CenterController {
 				 mp.put("rptas", "1");
 				 System.out.println(c.ListCargo());
 				break;
+			case  "planillas":
+				 mp.put("pl",  c.LisPlanillas());
+				 mp.put("rptas", "1");
+				 System.out.println(c.ListCargo());
+				break;
+				
+				
 			case "logout":
 				session = request.getSession(false);
 				session.invalidate();

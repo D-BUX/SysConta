@@ -4,19 +4,28 @@ $( document ).ready(function() {
 });
 function listarempleado()
 {
-	 $.post('metod?opc=listaremp', function (obj) {
+	 $.post('cc?opc=planillas', function (objJson) {
 	        var s='';
-	        var emp = obj[0];
-	        for (var i = 0; i < obj.length; i++) {
+	        var pl = objJson.pl;
+	        console.log(pl);
+	        for (var i = 0; i < pl.length; i++) {
 				s += '<tr>';
-	            s += '<td>'+obj[i].nombre+ ' '+obj[i].apellido+'</td>';
-	            s += '<td>'+obj[i].categoria+'</td>';
-	            s += '<td>'+obj[i].cargo+'</td>';
-	            s += '<td>'+obj[i].area+'</td>';
-	            s += '<td>'+obj[i].departamento+'</td>';
-	            s += '<td>'+obj[i].empresa+'</td>';
-	            s += '<td><a class="btn-floating waves-effect waves-light "><i class="mdi-content-clear" style="background: #FF5252 !important;"></i></a>' +' '+'<a class="btn-floating waves-effect waves-light "><i class="mdi-editor-mode-edit" style="background:#00bcd4; "></i></a>'+' '+'<a class="btn-floating waves-effect waves-light "><i class="mdi-editor-attach-money" style="background: #0097a7 !important"></i></a>'+'</td>';
-	            s += '<td><input type="checkbox" id="test'+i+'" class="checkBoxClass" value="' + obj[i].nombre +'" /><label for="test'+i+'">Yellow</label></td>';
+	            s += '<td>'+pl[i].nombre+ ' '+pl[i].apellido+'</td>';
+	            s += '<td>'+pl[i].ocupacion+'</td>';
+	            s += '<td>'+pl[i].diaslaborados+'</td>';
+	            s += '<td>'+pl[i].horas_normales+'</td>';
+	            s += '<td>'+pl[i].horas_extras+'</td>';
+	            s += '<td>'+pl[i].Basico+'</td>';
+	            s += '<td>'+pl[i].parentesco+'</td>';
+	            s += '<td>'+ " f.calcular " +'</td>';
+	            s += '<td>'+ "c . onp "+'</td>';
+	            s += '<td>'+pl[i].nombreafp+'</td>';
+	            s += '<td>'+"f. im renta"+'</td>';
+	            s += '<td>'+"t.descuento "+'</td>';
+	            s += '<td>'+ " c. Neto"+'</td>';
+	            s += '<td>'+pl[i].nombreap+'</td>';
+	            s += '<td>'+" total aporte"+'</td>';
+	            s += '<td><a class="btn-floating waves-effect waves-light "><i class="mdi-editor-attach-money" style="background: #0097a7 !important"></i></a>'+'</td>';
 	            s += '</tr>';
 	   
 			}
@@ -46,13 +55,21 @@ function createTable() {
     s += '<thead>';
     s += '<tr>';
     s += '<th>Nombres y Apellidos</th>';
-    s += '<th>Categoria</th>';
-    s += '<th>Cargo</th>';
-    s += '<th>Area</th>';
-    s += '<th>Departamento</th>';
-    s += '<th>Empresa </th>';
-    s += '<th>Opciones </th>';
-    s += '<th>Seleccionar</th>';
+    s += '<th>Ocupacion</th>';
+    s += '<th>Dias Laborados</th>';
+    s += '<th>Horas Laboradas</th>';
+    s += '<th>Horas Extras</th>';
+    s += '<th>Sueldo Basico </th>';
+    s += '<th>Asignacion Familiar </th>';
+    s += '<th>Total Remuneraciones</th>';
+    s += '<th>ONP 13%</th>';
+    s += '<th>AFP %</th>';
+    s += '<th>Impt. Renta</th>';
+    s += '<th>Total Descuentos</th>';
+    s += '<th><strong>Neto a pagar</strong></th>';
+    s += '<th>Essalud 9%</th>';
+    s += '<th>Total Aporte</th>';
+    s += '<th>OPCIONES</th>';
     s += ' </tr>';
     s += '</thead>';
     s += '<tbody id="data"></tbody>';
