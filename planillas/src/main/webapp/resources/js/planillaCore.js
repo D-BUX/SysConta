@@ -7,10 +7,19 @@ function listarempleado()
 	 $.post('cc?opc=planillas', function (objJson) {
 	        var s='';
 	        var pl = objJson.pl;
+	        var Remuneracion =[];
+	        var ImpRenta =[];
 	        console.log(pl);
 	        for (var i = 0; i < pl.length; i++) {
-	        	
 	        	// aqui iran los calculos
+	        	//falta calcualr si tiene horas extras
+	        	if(pl[i].parentesco == "hijo"){
+	        		Remuneracion [i] = pl[i].Basico + 85  ;
+	        	}else {
+	        		
+	        	}
+	        	
+	        	// aqui va impuesto a la renta
 	        	
 	        	
 	        	// cargamos tabla
@@ -22,11 +31,11 @@ function listarempleado()
 	            s += '<td>'+pl[i].horas_extras+'</td>';
 	            s += '<td>'+pl[i].Basico+'</td>';
 	            s += '<td>'+pl[i].parentesco+'</td>';
-	            s += '<td>'+ " f.calcular " +'</td>';
-	            s += '<td>'+ "c . onp "+'</td>';
-	            s += '<td>'+pl[i].nombreafp+'</td>';
+	            s += '<td>'+ Remuneracion[i] +'</td>';
+	            s += '<td>'+ pl[i].nombreafp +'</td>';
+	            s += '<td>'+ Math.round(Remuneracion[i] * pl[i].porcentaje)+'</td>';
 	            s += '<td>'+"f. im renta"+'</td>';
-	            s += '<td>'+"t.descuento "+'</td>';
+	            s += '<td>'+ ( Math.round(Remuneracion[i] * pl[i].porcentaje)+ 100) +'</td>';
 	            s += '<td>'+ " c. Neto"+'</td>';
 	            s += '<td>'+pl[i].nombreap+'</td>';
 	            s += '<td>'+" total aporte"+'</td>';
@@ -59,22 +68,22 @@ function createTable() {
     var s = '<table id="data-table-row-grouping" class="display" cellspacing="0" width="100%">';
     s += '<thead>';
     s += '<tr>';
-    s += '<th>Nombres y Apellidos</th>';
+    s += '<th>Trabajador</th>';
     s += '<th>Ocupacion</th>';
-    s += '<th>Dias Laborados</th>';
-    s += '<th>Horas Laboradas</th>';
-    s += '<th>Horas Extras</th>';
+    s += '<th>D. Laborados</th>';
+    s += '<th>H.Laboradas</th>';
+    s += '<th>H.Extras</th>';
     s += '<th>Sueldo Basico </th>';
     s += '<th>Asignacion Familiar </th>';
     s += '<th>Total Remuneraciones</th>';
-    s += '<th>ONP 13%</th>';
-    s += '<th>AFP %</th>';
-    s += '<th>Impt. Renta</th>';
+    s += '<th>Afiliacion</th>';
+    s += '<th>Pago %</th>';
+    s += '<th>Impt.Renta</th>';
     s += '<th>Total Descuentos</th>';
-    s += '<th><strong>Neto a pagar</strong></th>';
+    s += '<th><strong>Neto pagar</strong></th>';
     s += '<th>Essalud 9%</th>';
     s += '<th>Total Aporte</th>';
-    s += '<th>OPCIONES</th>';
+    s += '<th>Boleta</th>';
     s += ' </tr>';
     s += '</thead>';
     s += '<tbody id="data"></tbody>';
