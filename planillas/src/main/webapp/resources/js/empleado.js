@@ -1,6 +1,26 @@
 $( document ).ready(function() {
+	var arrid=[];
    listarempleado();
-   
+   $('.btn-warning-cancel').click(function(){
+   	swal({
+   		title: "Desea enviar a planilla?",
+   		text: 'A los trbajadores:'+arrid,
+   		type: "warning",
+   		showCancelButton: true,
+   		confirmButtonColor: '#DD6B55',
+   		confirmButtonText: 'Yes, delete it!',
+   		cancelButtonText: "No, cancel plx!",
+   		closeOnConfirm: false,
+   		closeOnCancel: false
+   	},
+   	function(isConfirm){
+       if (isConfirm){
+         swal("Deleted!", "Your imaginary file has been deleted!", "success");
+       } else {
+         swal("Cancelled", "Your imaginary file is safe :)", "error");
+       }
+   	});
+   });
 });
 function listarempleado()
 {
@@ -16,7 +36,7 @@ function listarempleado()
 	            s += '<td>'+obj[i].departamento+'</td>';
 	            s += '<td>'+obj[i].empresa+'</td>';
 	            s += '<td><a class="btn-floating waves-effect waves-light "><i class="mdi-content-clear" style="background: #FF5252 !important;"></i></a>' +' '+'<a class="btn-floating waves-effect waves-light "><i class="mdi-editor-mode-edit" style="background:#00bcd4; "></i></a>'+' '+'<a class="btn-floating waves-effect waves-light "><i class="mdi-editor-attach-money" style="background: #0097a7 !important"></i></a>'+'</td>';
-	            s += '<td><input type="checkbox" id="test'+i+'" class="checkBoxClass" value="' + obj[i].nombre +'" /><label for="test'+i+'">Yellow</label></td>';
+	            s += '<td><input type="checkbox" id="test'+i+'" class="checkBoxClass" value="' +'id:'+ obj[i].idempleado +' '+'nombre:'+ obj[i].nombre+'" /><label for="test'+i+'"></label></td>';
 	            s += '</tr>';
 	   
 			}
@@ -31,13 +51,18 @@ function listarempleado()
 	        function getSelected() {
                 var allVals = [];
                 $('#data :checked').each(function () {
-                    allVals.push($(this).val());
+                    allVals.push($(this).parents("#data tr").find(".sorting_1").text());
                 });
                 return allVals;
             }
 	        $("#enviar").click(function (){
-                var arrid=getSelected();                                     
-                console.log(arrid);                                
+                arrid=getSelected();
+                console.log(arrid)
+                for(var i=0;i<arrid.length;i++)
+                	{
+                	
+                	
+                	}
             });
 	    });
 	};
@@ -58,4 +83,5 @@ function createTable() {
     s += '<tbody id="data"></tbody>';
     s += '</table>';
     return s;
+    
 };

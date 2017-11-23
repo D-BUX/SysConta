@@ -14,20 +14,20 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container" >
 	<div class="section">
 		<div id="row-grouping" class="section">
 
 			<div class="row">
 				<p>Lista de Trabajadores Contratados</p>
-				<div id="contTable" class="col s12 m12 l9"></div>
+				<div id="contTable" class="col s12 m12 l9" style="margin-left: 13%;"></div>
 			</div>
 		</div>
 
 	</div>
-	<button class="btn waves-effect waves-light " type="submit" id="enviar">Send
+	<center><button class="btn btn-warning-cancel waves-effect waves-light " type="submit" id="enviar" style="background: #0097a7 !important">ENVIAR A PLANILLA
                         <i class="mdi-content-send right"></i>
-                      </button>
+                      </button></center>
 </div>
 
 	<%@include file="../../../jspf/footer.jspf"%>
@@ -37,5 +37,7 @@
 	<%@include file="../../../jspf/general.jspf"%>
 </body>
 <script src="<c:url value='resources/js/empleado.js'/>"></script>
+<script type="text/javascript">
+</script>
 
 </html>
