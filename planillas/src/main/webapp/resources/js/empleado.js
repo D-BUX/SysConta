@@ -4,6 +4,18 @@ $( document ).ready(function() {
    $('.btn-success').click(function(){
    	swal("Planilla programada!", "exitosamente!", "success");
    });
+   
+   function estadoplanilla() {
+	$.ajax({
+		type:"POST",
+		url: "metod?opc=estplanilla",
+		data: {arraid:arraid},
+		success: function(arraid)
+		{
+			console.log("SUCCES:"+arraid);
+		}
+	})
+}
 });
 function listarempleado()
 {

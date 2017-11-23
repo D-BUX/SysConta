@@ -68,3 +68,5 @@ public class CenterController2 {
 		out.close();
 	}
 }
+
+

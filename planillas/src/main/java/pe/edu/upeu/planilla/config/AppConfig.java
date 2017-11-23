@@ -33,9 +33,9 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	public static DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");// driver-conexion//
-		dataSource.setUrl("jdbc:mysql://localhost:3306/planillasdb");// url-conexion//
-		dataSource.setUsername("root");// user-conexion//
-		dataSource.setPassword("");// pass-conexion//
+		dataSource.setUrl("jdbc:mysql://192.168.21.20/planillasdb");// url-conexion//
+		dataSource.setUsername("remoto");// user-conexion//
+		dataSource.setPassword("12345678");// pass-conexion//
 		return dataSource;
 	}
 
