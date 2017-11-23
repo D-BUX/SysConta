@@ -102,13 +102,7 @@ public class CenterController {
 				session.invalidate();
 				response.sendRedirect("/login");
 				break;
-			case "estplanilla":
-				String idtrabajador []= {};
-				String estadopago="";
-				idtrabajador=request.getParameterValues("");
-				estadopago=request.getParameter("");
-				eO.update(idtrabajador, estadopago);
-				break;
+		
 			}
 
 		} catch (Exception e) {

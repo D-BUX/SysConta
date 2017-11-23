@@ -20,12 +20,12 @@
 
 			<div class="row">
 				<p>Lista de Trabajadores Contratados</p>
-				<div id="contTable" class="col s12 m12 l9" style="margin-left: 13%;"></div>
+				<div id="contTable" class="col s12 m12 l9"></div>
 			</div>
 		</div>
 
 	</div>
-	<center><button class="btn btn-warning-cancel waves-effect waves-light " type="submit" id="enviar" style="background: #0097a7 !important">ENVIAR A PLANILLA
+	<center><button class="btn btn-success waves-effect waves-light" type="submit" id="enviar" style="background: #0097a7 !important">ENVIAR A PLANILLA
                         <i class="mdi-content-send right"></i>
                       </button></center>
 </div>

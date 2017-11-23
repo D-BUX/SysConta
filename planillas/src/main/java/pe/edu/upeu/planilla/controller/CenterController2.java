@@ -48,7 +48,12 @@ public class CenterController2 {
 				list=eO.listarempleados();
 				break;
 
-			default:
+			case "estplanilla":
+				String idtrabajador []= {};
+				String estadopago="";
+				idtrabajador=request.getParameterValues("");
+				estadopago=request.getParameter("");
+				eO.update(idtrabajador, estadopago);
 				break;
 			}
 				

@@ -1,25 +1,8 @@
 $( document ).ready(function() {
 	var arrid=[];
    listarempleado();
-   $('.btn-warning-cancel').click(function(){
-   	swal({
-   		title: "Desea enviar a planilla?",
-   		text: 'A los trbajadores:'+arrid,
-   		type: "warning",
-   		showCancelButton: true,
-   		confirmButtonColor: '#DD6B55',
-   		confirmButtonText: 'Yes, delete it!',
-   		cancelButtonText: "No, cancel plx!",
-   		closeOnConfirm: false,
-   		closeOnCancel: false
-   	},
-   	function(isConfirm){
-       if (isConfirm){
-         swal("Deleted!", "Your imaginary file has been deleted!", "success");
-       } else {
-         swal("Cancelled", "Your imaginary file is safe :)", "error");
-       }
-   	});
+   $('.btn-success').click(function(){
+   	swal("Planilla programada!", "exitosamente!", "success");
    });
 });
 function listarempleado()
@@ -29,6 +12,7 @@ function listarempleado()
 	        var emp = obj[0];
 	        for (var i = 0; i < obj.length; i++) {
 				s += '<tr>';
+				 s += '<td>'+obj[i].idempleado+'</td>';
 	            s += '<td>'+obj[i].nombre+ ' '+obj[i].apellido+'</td>';
 	            s += '<td>'+obj[i].categoria+'</td>';
 	            s += '<td>'+obj[i].cargo+'</td>';
@@ -70,7 +54,8 @@ function createTable() {
     var s = '<table id="data-table-row-grouping" class="display" cellspacing="0" width="100%">';
     s += '<thead>';
     s += '<tr>';
-    s += '<th style="width: 15px;">Nombres y Apellidos</th>';
+    s += '<th>ID</th>';
+    s += '<th>Nombres y Apellidos</th>';
     s += '<th>Categoria</th>';
     s += '<th>Cargo</th>';
     s += '<th>Area</th>';
