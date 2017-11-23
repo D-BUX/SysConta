@@ -9,6 +9,11 @@ function listarempleado()
 	        var pl = objJson.pl;
 	        console.log(pl);
 	        for (var i = 0; i < pl.length; i++) {
+	        	
+	        	// aqui iran los calculos
+	        	
+	        	
+	        	// cargamos tabla
 				s += '<tr>';
 	            s += '<td>'+pl[i].nombre+ ' '+pl[i].apellido+'</td>';
 	            s += '<td>'+pl[i].ocupacion+'</td>';
@@ -25,7 +30,7 @@ function listarempleado()
 	            s += '<td>'+ " c. Neto"+'</td>';
 	            s += '<td>'+pl[i].nombreap+'</td>';
 	            s += '<td>'+" total aporte"+'</td>';
-	            s += '<td><a id="'+pl[i].idempleado+'" onclick="preba(this.id);" class="btn-floating waves-effect waves-light "><i class="mdi-editor-attach-money" style="background: #0097a7 !important"></i></a></td>';
+	            s += '<td><a id="'+pl[i].idempleado + pl[i].nombre+'" onclick="preba(this.id);" class="btn-floating waves-effect waves-light "><i class="mdi-editor-attach-money" style="background: #0097a7 !important"></i></a></td>';
 	            s += '</tr>';
 	   
 			}
@@ -79,7 +84,7 @@ function createTable() {
 
 
 function preba (id){
-	alert(id);
+	alert("El trabajador "+ id +" esta apto para generar boleta  ");
 	
 }
 
