@@ -434,8 +434,7 @@
 
 		function listarSeguro() {
 			$
-					.post(
-							'cc?opc=seguro',
+					.post('cc?opc=seguro',
 							function(objJson) {
 								var v = '';
 								var list = objJson.s;
