@@ -25,7 +25,7 @@ function listarempleado()
 	            s += '<td>'+ " c. Neto"+'</td>';
 	            s += '<td>'+pl[i].nombreap+'</td>';
 	            s += '<td>'+" total aporte"+'</td>';
-	            s += '<td><a class="btn-floating waves-effect waves-light "><i class="mdi-editor-attach-money" style="background: #0097a7 !important"></i></a>'+'</td>';
+	            s += '<td><a id="'+pl[i].idempleado+'" onclick="preba(this.id);" class="btn-floating waves-effect waves-light "><i class="mdi-editor-attach-money" style="background: #0097a7 !important"></i></a></td>';
 	            s += '</tr>';
 	   
 			}
@@ -76,3 +76,11 @@ function createTable() {
     s += '</table>';
     return s;
 };
+
+
+function preba (id){
+	alert(id);
+	
+}
+
+
