@@ -22,6 +22,7 @@ import com.sun.javafx.scene.control.ControlAcceleratorSupport;
 
 import pe.edu.upeu.planilla.config.AppConfig;
 import pe.edu.upeu.planilla.dao.ContratoDAO;
+import pe.edu.upeu.planilla.dao.EmpleadoDAO;
 
 @Controller
 public class CenterController {
@@ -31,7 +32,7 @@ public class CenterController {
 	Map<String, Object> mp = new HashMap<>();
 	Map<String, Object> rpta = new HashMap<String, Object>();
 	ArrayList<Map<String, Object>>  list =new ArrayList<Map<String, Object>>();
-
+	public EmpleadoDAO eO= new EmpleadoDAO(AppConfig.getDataSource());
 	
 
 	@RequestMapping(value = "/cc" , method=RequestMethod.POST)
@@ -100,6 +101,13 @@ public class CenterController {
 				session = request.getSession(false);
 				session.invalidate();
 				response.sendRedirect("/login");
+				break;
+			case "estplanilla":
+				String idtrabajador []= {};
+				String estadopago="";
+				idtrabajador=request.getParameterValues("");
+				estadopago=request.getParameter("");
+				eO.update(idtrabajador, estadopago);
 				break;
 			}
 

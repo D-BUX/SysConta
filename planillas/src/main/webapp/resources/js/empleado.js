@@ -70,7 +70,7 @@ function createTable() {
     var s = '<table id="data-table-row-grouping" class="display" cellspacing="0" width="100%">';
     s += '<thead>';
     s += '<tr>';
-    s += '<th>Nombres y Apellidos</th>';
+    s += '<th style="width: 15px;">Nombres y Apellidos</th>';
     s += '<th>Categoria</th>';
     s += '<th>Cargo</th>';
     s += '<th>Area</th>';
