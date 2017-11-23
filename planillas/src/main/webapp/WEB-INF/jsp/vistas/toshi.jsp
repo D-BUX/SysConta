@@ -411,10 +411,7 @@
 		});
 
 		function listarCargo() {
-			$
-					.post(
-							'cc?opc=cargo',
-							function(objJson) {
+			$.post('cc?opc=cargo',function(objJson) {
 								var s = '';
 								var lista = objJson.pr;
 								var rspt = objJson.rpta;
