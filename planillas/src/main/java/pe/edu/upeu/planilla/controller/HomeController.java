@@ -66,7 +66,10 @@ public class HomeController {
     public String boletas() {
         return "vistas/Boletas";
     }
-	
+	@RequestMapping(value = "/basic")
+    public String basic() {
+        return "vistas/Registros";
+    }
 	
 	
     

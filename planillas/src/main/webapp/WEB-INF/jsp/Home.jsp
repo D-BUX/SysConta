@@ -148,7 +148,7 @@
 					</div>
 				</li>
 				<%
-					if ((cli.getIdrol() == 1) || (cli.getIdrol() == 2)) {
+					if ((cli.getIdrol() == 1)) {
 				%>
 
 				<li class="bold"><a href="#" id="home" name="myframe"
@@ -163,6 +163,9 @@
 				<li class="bold"><a href="#" id="planilla" name="myframe"
 					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
 						Planillas</a></li>
+				<li class="bold"><a href="#" id="basic" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Registros Basicos</a></li>
 				
 				<%
 					} else if (cli.getIdrol() == 3) {
@@ -175,6 +178,21 @@
 						Planillas</a></li>
 				
 
+				<%
+					}else {
+				%>
+				<li class="bold"><a href="#" id="home" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Home</a></li>
+				<li class="bold"><a href="#" id="con" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Contratación</a></li>
+				<li class="bold"><a href="#" id="trabajo" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Reg. Trabajadores</a></li>
+				<li class="bold"><a href="#" id="planilla" name="myframe"
+					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
+						Planillas</a></li>
 				<%
 					}
 				%>
@@ -291,22 +309,15 @@
 				$(".oldContent").show();
 
 			});
+			
+			$("#basic").click(function() {
+				$('#myframe').attr('src', '<c:url value="basic"/>');
+				$(".newContent").hide();
+				$(".oldContent").show();
 
-			/*$('nav a[href !="#"]').click(function () {
-				var con = "cont";
-				$('#myframe').attr('src','<c:url value='+cont+'/>');
-			    $(".newContent").hide();
-			    if (typeof pagedestroy === "function") {
-			        pagedestroy();
-			        //  pagedestroy = undefined;
-			    }
-			    pagefunction = null;
-			    $(".newContent").removeData().html("");
-			    $(".newContent").empty();
-			    $(".oldContent").show();
-			    //loadURL("cont", $(".newContent"));
 			});
-			 */
+
+			
 		});
 	</script>
 
