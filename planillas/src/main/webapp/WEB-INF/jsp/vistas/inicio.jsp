@@ -5,8 +5,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
+<!-- CSS -->
+<%@include file="../../../jspf/header.jspf"%>
 </head>
 <body>
+
+<div class="container">
 <h1> Bievenidos al sistema de Planillas de Alpha - Team</h1>
+<h2>Integrantes</h2>
+<h3>Brandux Juarez Avila</h3>
+<h3>Kevin Mogollon Calle</h3>
+</div>
+<%@include file="../../../jspf/general.jspf"%>
+	
 </body>
 </html>

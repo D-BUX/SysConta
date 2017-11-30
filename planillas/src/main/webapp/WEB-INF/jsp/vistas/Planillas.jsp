@@ -21,7 +21,7 @@
 					<h4 class="header">Planilla del mes de Noviembre <strong>REPUESTOS Y SERVICIOS LUCHANO</strong></h4>
 				</div>
 				<div id="contTable" class="col s12 m12 l12"></div>
-<p><a class="waves-effect waves-light btn modal-trigger  light-blue" href="#modal1">Modal</a>
+<p><a class="waves-effect waves-light btn modal-trigger  light-blue" href="#modal1">+</a>
                 </p>
 				<div class="divider"></div>
 			</div>
