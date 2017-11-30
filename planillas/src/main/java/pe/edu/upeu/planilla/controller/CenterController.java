@@ -120,19 +120,4 @@ public class CenterController {
 			out.close();
 	}
 
-	
-	/*public void respuesta(HttpServletResponse response) {
-		try {
-			out = response.getWriter();
-			out.println(gson.toJson(list));
-			out.flush();
-			out.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			out.flush();
-			out.close();
-		}
-	}*/
-	
-
 }

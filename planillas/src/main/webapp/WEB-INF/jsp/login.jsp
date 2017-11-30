@@ -25,7 +25,7 @@
 	content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
 <meta name="keywords"
 	content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
-<title>Login Page | Materialize - Material Design Admin Template</title>
+<title>Sistema de planillas | Contabilidad</title>
 
 <!-- Favicons-->
 <link rel="icon"

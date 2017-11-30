@@ -6,7 +6,7 @@
 <html lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>SysConta :.</title>
+<title>Sistema de planillas | Contabilidad</title>
 
 
 

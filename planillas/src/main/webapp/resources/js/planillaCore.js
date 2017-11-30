@@ -1,11 +1,15 @@
 $( document ).ready(function() {
    listarempleado();
-   
+   $('#modal1').hide();
+
 });
 function listarempleado()
 {
 	 $.post('cc?opc=planillas', function (objJson) {
 	        var s='';
+	        var tbas =0;
+	        var tnp = 0;
+	        var ttr =0;
 	        var pl = objJson.pl;
 	        var ruit = objJson.u;
 	        var Remuneracion =[];
@@ -62,9 +66,9 @@ function listarempleado()
 	        	//console.log(ipt);
 	        	var imr = [];
 	        	var  se = 7 * uit;
-	        	
 	        	var bimp = ipt -se ; // bienestar imponible
 	        	var pc = 5*uit; //primera condicion de uit
+	        	
 	        	console.log("pc" + pc);
 	        	if (bimp > pc ){
 	        		var sc = 20 * uit
@@ -92,14 +96,11 @@ function listarempleado()
 	        	}else{
 	        		napor = 'no';
 	        	}
-	        	var tbas =0;
+	        	
 	        	tbas  = tbas + pl[i].Basico;
-	        	var tnp = 0 , ttr =0;
 	        	tnp = tnp + NP;
+	        	ttr = ttr + tr;
 	        	
-	        	ttr = ttr + tr[i];
-	        	
-	        	var datall = [ tbas , Math.round(ttr) , Math.round( NP) ];
 	        	console.log("tabas" + tbas);
 	        	console.log("ttr" + ttr);
 	        	console.log("tnp" + tnp);
@@ -121,7 +122,7 @@ function listarempleado()
 	            s += '<td>'+ Math.round(NP)+'</td>';
 	            s += '<td>'+napor+'</td>';
 	            s += '<td>'+ Math.round(apor)+'</td>';
-	            s += '<td><a id="'+pl[i].idempleado + pl[i].nombre+'" onclick="preba(this.id);" class="btn-floating waves-effect waves-light "><i class="mdi-editor-attach-money" style="background: #0097a7 !important"></i></a></td>';
+	            s += '<td><a id ="'+pl[i].idempleado + pl[i].nombre+'" onclick="preba(this.id);" class="waves-effect waves-light btn modal-trigger  light-blue" href="#modal1">+</a></td>';
 	            s += '</tr>';
 	   
 			}
@@ -134,7 +135,10 @@ function listarempleado()
 	        
 	        /// gregar cuadro estadistico
 	        	var labela =['Sueldo Básico' , 'Total Remuneraciones' , 'Neto a pagar'];
-	    		
+	        	rttr =  Math.round(ttr) ;
+	        	rtnp = Math.round( tnp); 
+	        	var datall = [ tbas , rttr , rtnp ];
+	        	
 	    		var ctx = document.getElementById("myChart").getContext('2d');
 	    		
 	    		console.log(labela);
@@ -172,30 +176,35 @@ function listarempleado()
 	    				}
 	    			}
 	    		});
-
-	    		//ssds
-	    	
-	    	
-	    	// asqui
-	        
+	    		
+	    		p = precio(rttr);
+	    		v = cuerpocarga(tbas , rtnp);
+	    		
+	    		$("#precio").empty();
+				$("#precio").append(p);
+	    		
+				$("#cuerpoCarga").empty();
+				$("#cuerpoCarga").append(v);
+	    		
 	    });
 	};
+	
 function createTable() {
     var s = '<table id="data-table-row-grouping" class="display" cellspacing="0">';
     s += '<thead>';
     s += '<tr>';
     s += '<th>Trabajador</th>';
     s += '<th>Ocupacion</th>';
-    s += '<th>D.Laborados</th>';
+    s += '<th>Dias Labor</th>';
     s += '<th>H.Laboradas</th>';
-    s += '<th>H.Extras</th>';
+    s += '<th>H.extras</th>';
     s += '<th>Pago h.extra</th>';
     s += '<th>Sueldo Basico</th>';
     s += '<th>Asignacion Familiar </th>';
-    s += '<th>T.Remuneraciones</th>';
+    s += '<th>T.Remuneracion</th>';
     s += '<th>Afiliacion</th>';
     s += '<th>Impt.Renta</th>';
-    s += '<th>Total Descuentos</th>';
+    s += '<th>T.Descuentos</th>';
     s += '<th><strong>Neto pagar</strong></th>';
     s += '<th>Essalud</th>';
     s += '<th>T.Aporte</th>';
@@ -208,19 +217,26 @@ function createTable() {
 };
 
 // funcion para generar reporte grafico
-function agregar() {
-	
-	
+function precio(rttr) {
+	var p = '<sup>S/</sup >'+rttr+'<sub></sub>';
+	return p;
 }
 
-
+function cuerpocarga(tbas , rtnp){
+	var v = '<ul class="collection">';
+	v +='<li class="collection-item">Sueldo Basico</li>';
+	v +='<li class="collection-item"><sup>S/</sup ><strong>'+ tbas +'</strong><sub></sub></li>';
+	v +='<li class="collection-item">Neto a Pagar</li>';
+	v +='<li class="collection-item"><sup>S/</sup ><strong>'+ rtnp +'</strong><sub></sub></li>';
+	v +='</ul>';
+	return v;
+}
 
 
 function preba (id){
-	alert("El trabajador "+ id +" esta apto para generar boleta  ");
 	
+	 //$('#modal1').show();
+	  //$('#modal1').modal('close');
+	 alert("El trabajador "+ id +" esta apto para generar boleta  ");
 }
-
-
-
 
