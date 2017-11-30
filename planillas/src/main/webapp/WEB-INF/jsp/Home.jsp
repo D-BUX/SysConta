@@ -163,9 +163,7 @@
 				<li class="bold"><a href="#" id="planilla" name="myframe"
 					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
 						Planillas</a></li>
-				<li class="bold"><a href="#" id="boletas" name="myframe"
-					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
-						Boletas</a></li>
+				
 				<%
 					} else if (cli.getIdrol() == 3) {
 				%>
@@ -175,9 +173,7 @@
 				<li class="bold"><a href="#" id="planilla" name="myframe"
 					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
 						Planillas</a></li>
-				<li class="bold"><a href="#" id="boletas" name="myframe"
-					class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>
-						Boletas</a></li>
+				
 
 				<%
 					}
