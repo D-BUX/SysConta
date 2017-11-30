@@ -128,7 +128,7 @@
 							<%
 								if (cli.getIdrol() == 1) {
 							%>
-							<p class="user-roal">ROOt</p>
+							<p class="user-roal">GTH</p>
 							<%
 								} else if (cli.getIdrol() == 2) {
 							%>
