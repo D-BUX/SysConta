@@ -442,8 +442,7 @@
 								console.log(list);
 								console.log(rspta);
 								for (var i = 0; i < list.length; i++) {
-									v += '<option value="'+ list[i].idseguro + '" >'
-											+ list[i].nombreafp + '</option>';
+									v += '<option value="'+ list[i].idseguro + '" >'+ list[i].nombreafp + '</option>';
 									//s += '</select> <label>Selecciona Cargo</label>';
 								}
 

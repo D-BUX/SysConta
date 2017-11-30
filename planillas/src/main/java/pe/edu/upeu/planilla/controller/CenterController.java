@@ -96,6 +96,7 @@ public class CenterController {
 				break;
 			case  "planillas":
 				 mp.put("pl",  c.LisPlanillas());
+				 mp.put("u",  c.getUit());
 				 mp.put("rptas", "1");
 				 System.out.println(c.ListCargo());
 				break;

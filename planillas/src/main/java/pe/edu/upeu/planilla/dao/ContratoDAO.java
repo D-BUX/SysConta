@@ -66,5 +66,8 @@ public class ContratoDAO {
 			return (ArrayList<Map<String, Object>>) jt.queryForList(sql);
 		}
 		
-		
+		public ArrayList<Map<String , Object>> getUit (){
+			String sql ="SELECT precio as ui FROM planillasdb.uit";
+			return (ArrayList<Map<String, Object>>) jt.queryForList(sql);
+		}
 }

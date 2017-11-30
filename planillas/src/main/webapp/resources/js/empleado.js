@@ -52,13 +52,23 @@ function listarempleado()
                 return allVals;
             }
 	        $("#enviar").click(function (){
-                arrid=getSelected();
+	        	var envia = [];
+	        	
+                var arrid=getSelected();
+                console.log(arrid.length);
+                
+                for (var i =1 ;i<arrid.length ; i++){
+                    var envia = arrid[i];	
+                }
                 console.log(arrid)
-                for(var i=0;i<arrid.length;i++)
-                	{
-                	
-                	
-                	}
+                var url ='metod?opc=estplanilla';
+                    for(var i =0 ; i<arrid.length;i++){
+                    	data +='&add='+arrid[i];
+                    }
+                    console.log(data);
+                    $.post(url,data,function(objJson){
+                    	//Alert("as");
+                    });
             });
 	    });
 	};
