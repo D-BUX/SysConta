@@ -1,7 +1,7 @@
 $( document ).ready(function() {
    listarempleado();
   
-
+   bolteall();
 });
 function listarempleado()
 {
@@ -122,7 +122,7 @@ function listarempleado()
 	            s += '<td>'+ Math.round(NP)+'</td>';
 	            s += '<td>'+napor+'</td>';
 	            s += '<td>'+ Math.round(apor)+'</td>';
-	            s += '<td><a id ="'+pl[i].idempleado + pl[i].nombre+'" onclick="modal(this.id);" class="waves-effect waves-light btn modal-trigger  light-blue" href="#modal1">+</a></td>';
+	            s += '<td><a id ="'+pl[i].idempleado + pl[i].nombre+'" onclick="preba(this.id);" class="waves-effect waves-light btn modal-trigger  light-blue" href="#modal1">+</a></td>';
 	            s += '</tr>';
 	   
 			}
@@ -186,9 +186,9 @@ function listarempleado()
 				$("#cuerpoCarga").empty();
 				$("#cuerpoCarga").append(v);
 	    		
-				m=modal (id);
-				$("#modal1").empty();
-				$("#modal1").append(v);
+				//m=modal (id);
+				//$("#modal1").empty();
+				//$("#modal1").append(v);
 	    		
 	    });
 	};
@@ -374,3 +374,107 @@ function modal (id){
 		return m;
 
 }
+
+function bolteall(){
+	url ="cc?opc=boleta";
+	 $.post('cc?opc=boleta', function (objJson) {
+		var bole = objJson.bol;
+		console.log(bole);
+		var c ="";
+		for (var i = 0; i < bole.length; i++) {
+        	// aqui iran los calculos
+        	//falta calcualr si tiene horas extras
+        	if(bole[i].parentesco == "hijo"){
+        		f = 85  ;
+        	}else {
+        		f=  0 ;
+        	}
+        	
+        	//falta calcualr si tiene horas extras
+        	thorasEx [i]= bole[i].horas_extras	  ;
+        	if(thorasEx[i] >0){
+        		
+        		if(thorasEx [i] > 2){
+        			var recuento = thorasEx [i] -  2 ;
+        			var p = (bole[i].Basico/30/8)*2*1.25; //priemras 1 a2 horas
+        			var t =(bole[i].Basico/30/8) * recuento * 1.35 ;
+        			ht = p + t;
+        		
+        		}else{
+        			ht = (pl[i].Basico/30 / 8 )*2 *thorasEx[i]* 1.25;
+        		}
+        		
+        	}
+        	
+        	Remuneracion [i] = bole[i].Basico + f ;
+        	var tr = bole[i].Basico + f + ht;
+        	// aqui va impuesto a la renta
+        	var descuento = (Remuneracion[i] * bole[i].porcentaje)+ 100;
+        	
+        	
+        	//imúesto a la renta
+        	
+        	console.log("uit" +  uit);
+        	var ipt = tr * 14;
+        	//console.log(ipt);
+        	var imr = [];
+        	var  se = 7 * uit;
+        	var bimp = ipt -se ; // bienestar imponible
+        	var pc = 5*uit; //primera condicion de uit
+        	
+        	console.log("pc" + pc);
+        	if (bimp > pc ){
+        		var sc = 20 * uit
+        		if(bimp > sc){
+        			var a = sc - pc;
+        		}else{ //no es maypr a 20 
+        			imr[i] = ((pc * 0.08) + ((bimp - pc) * 0.14)) / 12;
+        		}
+        	}else{ // no es mayo qu 5uit 
+        		if (bimp<0){
+        			imr =0;
+        		}else{
+        			imr = (bimp * 0.08)/12;
+        		}
+        	
+        		console.log(imr);
+        	}
+        	
+        	var rdes = descuento + imr;
+        	var NP = tr - rdes;
+        	var apor = tr * bole[i].porcentajeap;
+        	var napor = '';
+        	if(bole[i].nombreap == 'essalud'){
+        		napor = 'si';
+        	}else{
+        		napor = 'no';
+        	}
+        	
+        	tbas  = tbas + bole[i].Basico;
+        	tnp = tnp + NP;
+        	ttr = ttr + tr;
+		}
+        	
+		//var c = crete (tr, apor);
+		//$("#cargaBol").empty();
+		//$("#cargaBol").append(c);
+		//console.log(c);
+	 });
+	
+}
+
+function crete(tr , apor){
+	var  c ='<div class="col s12 m3 l3">';
+    c+='<p class="strong"><strong>TOTAL INGRESOS</strong></p>';
+    c+='<h4 class="header"><sup>S/</sup >29<sub></sub></h4>';
+    c+='</div>';
+           c+='<div class="col s12 m3 l3">';
+             c+='<p class="strong"><strong>TOTAL DESCUENTOS</strong></p>';                      
+             c+='<h4 class="header"><sup>S/</sup >'+tr+'<sub></sub></h4>';
+           c+='</div>';
+           c+='<div class="col s12 m3 l3">';
+           c+='<p class="strong"><strong>TOTAL APORTES </strong></p>';
+          c+='<h4 class="header"><sup>S/</sup >'+apor+'<sub></sub></h4>';
+           c+='</div>';
+           return c;
+} 

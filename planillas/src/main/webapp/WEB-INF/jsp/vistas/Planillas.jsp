@@ -21,7 +21,7 @@
 					<h4 class="header">Planilla del mes de Noviembre <strong>REPUESTOS Y SERVICIOS LUCHANO</strong></h4>
 				</div>
 				<div id="contTable" class="col s12 m12 l12"></div>
-<p><a class="waves-effect waves-light btn modal-trigger  light-blue" href="#modal1">+</a>
+					<p><a  class="waves-effect  waves-light btn modal-trigger  light-blue" href="#modal1">+</a>
                 </p>
 				<div class="divider"></div>
 			</div>
@@ -129,18 +129,18 @@
                   <h4 class="white-text invoice-text">CARGA</h4>
                 </div>
                 <div class="col s12 m9 l9 invoice-brief cyan white-text">
-                  <div class="row">
+                  <div class="row" id="cargaBol" >
                     <div class="col s12 m3 l3">
                       <p class="strong"><strong>TOTAL INGRESOS</strong></p>
-                      <h4 class="header"><sup>S/</sup >29<sub></sub></h4>
+                      <h4 class="header"><sup>S/</sup >3050<sub></sub></h4>
                     </div>
                     <div class="col s12 m3 l3">
                       <p class="strong"><strong>TOTAL DESCUENTOS</strong></p>
-                      <h4 class="header"><sup>S/</sup >29<sub></sub></h4>
+                      <h4 class="header"><sup>S/</sup >500<sub></sub></h4>
                     </div>
                     <div class="col s12 m3 l3">
                       <p class="strong"><strong>TOTAL APORTES </strong></p>
-                      <h4 class="header"><sup>S/</sup >29<sub></sub></h4>
+                      <h4 class="header"><sup>S/</sup >399<sub></sub></h4>
                     </div>
                   </div>
                 </div>

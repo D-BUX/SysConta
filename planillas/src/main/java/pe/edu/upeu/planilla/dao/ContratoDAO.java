@@ -70,4 +70,16 @@ public class ContratoDAO {
 			String sql ="SELECT precio as ui FROM planillasdb.uit";
 			return (ArrayList<Map<String, Object>>) jt.queryForList(sql);
 		}
+		
+		public ArrayList<Map<String,Object>> boleta (){
+			String sql ="SELECT  em.idempleado, pr.nombre , pr.apellido , cg.cargo as ocupacion ,p.diaslaborados , p.horas_normales , p.horas_extras , p.estado,\r\n" + 
+					"					        s.sueldo as Basico,  cf.parentesco,sg.idseguro ,sg.nombreafp, sg.porcentaje,ap.idaportes , ap.nombreap , ap.porcentajeap\r\n" + 
+					"					FROM planillasdb.persona Pr , planillasdb.empleado em, planillasdb.carga_familiar cf,  planillasdb.contrato ct ,  planillasdb.cargo cg ,  planillasdb.sueldo s,\r\n" + 
+					"						 planillasdb.pago p, planillasdb.seguro sg ,  planillasdb.aportes ap \r\n" + 
+					"					where pr.idpersona = em.idpersona  and cf.idempleado = em.idempleado and em.idempleado = ct.idempleado and em.idaportes = ap.idaportes and sg.idseguro = em.idseguro and\r\n" + 
+					"						   ct.idcargo = cg.idcargo and cg.idsueldo = s.idsueldo and em.idempleado = p.idempleado and p.idempleado = '20'\r\n" + 
+					"					       And p.estado = 1;";
+			return (ArrayList<Map<String, Object>>) jt.queryForList(sql);
+		}
+		
 }

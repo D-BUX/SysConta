@@ -84,7 +84,7 @@
 					<div class="input-field col s12 center">
 						<img src="<c:url value='resources/imagenes/icono.png'/>" alt=""
 							class="circle responsive-img valign profile-image-login" />
-						<p class="center login-form-text">Sistema de Planillas</p>
+						<p class="center login-form-text">Sistema de Planillas <strong>V0.1</strong></p>
 					</div>
 				</div>
 				<div class="row margin">

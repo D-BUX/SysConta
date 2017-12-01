@@ -100,7 +100,10 @@ public class CenterController {
 				 mp.put("rptas", "1");
 				 System.out.println(c.ListCargo());
 				break;
-				
+			case "boleta":
+				mp.put("bol", c.boleta());	
+				System.out.println(c.boleta());
+					break;
 				
 			case "logout":
 				session = request.getSession(false);
@@ -111,7 +114,7 @@ public class CenterController {
 			}
 
 		} catch (Exception e) {
-			mp.put("rpta", false);
+			mp.put("rpta", 0);
 			System.out.println("Error CenterController COMPONENTS : " + e);
 		}
 		    Gson gson = new Gson();
